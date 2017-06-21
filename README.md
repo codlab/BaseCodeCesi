@@ -20,6 +20,24 @@ Un fichier de compilation gradle contient :
 - potentiellement des outils externes comme des processeurs d'annotations
 - le bloc des dépendances du projet (les bibliothèques comme le support android, DBFlow, Fabric/Crashlytics, les analytics etc...
 
+### Dépendances
+
+Dans la quasi totalité des cas, les bibliothèques intégrables dans les projets vont se borner à ajouter dans le bloc de dépendances :
+
+```
+dependencies { // ce bloc existe déjà
+...
+compile "domain.name:library-name:version"
+...
+} //</>
+```
+
+Des subtitlités peuvent apparaître mais il sera largement usuel, là aussi, de trouver des snippets ("morceaux") de code dans la documentation de la dite bibliothèque pour modifier le build.gradle en cas de modifications plus importantes.
+
+
+Exemple; DBFlow nécessite qu'un processeur d'annotation s'exécute pour abstraire complètement la gestion SQLite au sein de l'application.
+
+
 ## Versioning imposé
 
 ### Principe
