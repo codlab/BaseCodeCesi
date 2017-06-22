@@ -7,28 +7,28 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  * Created by kevinleperf on 22/06/2017.
  */
 
-public class ClassImplements extends AbstractExercise{
+public class ClassImplements extends AbstractExercise {
 
     /**
      * Implémentez cette méthode qui devra utiliser l'interface IProviderVolumetric
      * pour renvoyer un objet instancié d'une classe que vous choisirez.
-     *
+     * <p>
      * Cette classe devra entre autre définir au moins 2 méthodes permettant de calculer
      * le volume et la surface de cet objet
      */
     private IProvideVolumetric implementsProvideVolumetricUsingPseudoClass() {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     /**
      * Implémentez cette méthode qui devra utiliser l'interface IProviderVolumetric
      * pour renvoyer un objet instancié d'une pseudo classe que vous implémenterez "à chaud"
-     *
+     * <p>
      * Cette pseudo classe devra entre autre définir au moins 2 méthodes permettant de calculer
      * le volume et la surface de cet objet
      */
     private IProvideVolumetric implementsProvideVolumetricWithClass() {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     @Override

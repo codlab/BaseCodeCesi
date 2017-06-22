@@ -17,7 +17,7 @@ public class ClassAbstract extends AbstractExercise{
      * le volume et la surface de cet objet
      */
     private IProvideVolumetric implementsProvideVolumetricUsingPseudoClass() {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     /**
@@ -28,7 +28,7 @@ public class ClassAbstract extends AbstractExercise{
      * le volume et la surface de cet objet
      */
     private IProvideVolumetric implementsProvideVolumetricWithClass() {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     @Override

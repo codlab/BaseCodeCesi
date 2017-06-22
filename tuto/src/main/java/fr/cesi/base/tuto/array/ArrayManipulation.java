@@ -29,7 +29,7 @@ public class ArrayManipulation extends AbstractExercise {
         int array[] = null;
         //mettre la réponse ici
 
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     @Override

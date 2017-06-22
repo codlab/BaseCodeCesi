@@ -21,7 +21,7 @@ public class ArrayObjectManipulation extends AbstractExercise {
         Views.View array[] = null;
 
         //mettre la réponse ici
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     @Override

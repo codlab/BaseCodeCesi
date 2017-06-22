@@ -10,22 +10,22 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  * tester la parité ou non d'un nombre donné
  */
 
-public class Manipulation extends AbstractExercise{
+public class Manipulation extends AbstractExercise {
 
     private boolean isEven(float number) {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     private boolean isOdd(int number) {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     private boolean isEven(long number) {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     private boolean isOdd(double number) {
-        throw new NotImplementedException();
+        throw new NoSuchMethodError();
     }
 
     @Override
