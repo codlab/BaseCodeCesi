@@ -1,4 +1,4 @@
-package fr.cesi.basecode;
+package fr.cesi.example;
 
 import org.junit.Test;
 

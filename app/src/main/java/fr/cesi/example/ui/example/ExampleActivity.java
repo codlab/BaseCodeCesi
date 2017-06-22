@@ -1,10 +1,9 @@
-package fr.cesi.basecode.ui.example;
+package fr.cesi.example.ui.example;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-import fr.cesi.basecode.R;
+import fr.cesi.example.R;
 
 public class ExampleActivity extends AppCompatActivity {
 

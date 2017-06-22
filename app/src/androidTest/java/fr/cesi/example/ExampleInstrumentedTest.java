@@ -1,4 +1,4 @@
-package fr.cesi.basecode;
+package fr.cesi.example;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
