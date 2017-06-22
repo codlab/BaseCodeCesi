@@ -22,6 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        main {
+
+        }
+
+        example {
+            applicationIdSuffix ".example"
+            versionNameSuffix "-example"
+        }
+    }
 }
 
 dependencies {
@@ -38,4 +48,7 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow-core:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow:4.0.4"
 
+    //bottom sheet library : use with maps
+    compile 'com.flipboard:bottomsheet-core:1.5.3'
+    compile 'com.flipboard:bottomsheet-commons:1.5.3' // optional
 }

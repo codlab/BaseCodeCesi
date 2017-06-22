@@ -1,0 +1,7 @@
+<resources>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="validate">Validate</string>
+    <string name="title_activity_bottom_sheet">BottomSheetActivity</string>
+    <string name="show_bottom_sheet">Show bottom sheet</string>
+</resources>
