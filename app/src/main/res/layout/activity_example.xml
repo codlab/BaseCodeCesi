@@ -11,7 +11,7 @@
         android:background="?attr/colorPrimary" />
 
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="301dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center_vertical"
@@ -57,7 +57,7 @@
 
         <com.rey.material.widget.Button
             style="@style/YourRippleDrawableStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="153dp"
             android:layout_height="wrap_content"
             android:text="BUTTON"
             app:rd_enable="true" />
