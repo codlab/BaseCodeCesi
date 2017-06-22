@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.cesi.example">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
-        <activity android:name=".ui.example.ExampleActivity">
+        <activity android:name="fr.cesi.example.ui.example.ExampleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -12,7 +11,7 @@
         </activity>
 
         <activity
-            android:name=".ui.example.BottomSheetActivity"
+            android:name="fr.cesi.example.ui.example.BottomSheetActivity"
             android:label="@string/title_activity_bottom_sheet"
             android:theme="@style/AppTheme">
             <intent-filter>

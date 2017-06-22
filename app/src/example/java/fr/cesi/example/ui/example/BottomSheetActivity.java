@@ -8,7 +8,8 @@ import android.widget.Button;
 
 import com.flipboard.bottomsheet.BottomSheetLayout;
 
-import fr.cesi.example.R;
+import fr.cesi.basecode.R;
+
 
 public class BottomSheetActivity extends AppCompatActivity {
 
