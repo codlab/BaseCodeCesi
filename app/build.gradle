@@ -38,4 +38,7 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow-core:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow:4.0.4"
 
+    // composants de MaterialDesign https://github.com/navasmdc/MaterialDesignLibrary
+    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+
 }
