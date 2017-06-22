@@ -32,7 +32,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 
-
     //ADD DBFlow dpendency - database management abstracted for android
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:4.0.4"
@@ -40,5 +39,8 @@ dependencies {
 
     // composants de MaterialDesign https://github.com/navasmdc/MaterialDesignLibrary
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+
+    //from wasabeef : ToxicBakery/ViewPagerTransforms
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
 
 }
