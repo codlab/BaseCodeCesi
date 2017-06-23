@@ -8,6 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="fr.cesi.base.ui.activities.startActivty" />
+        <activity android:name="fr.cesi.ui.start_activity"></activity>
     </application>
 
 </manifest>
