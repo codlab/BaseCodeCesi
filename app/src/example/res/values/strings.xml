@@ -4,4 +4,9 @@
     <string name="validate">Validate</string>
     <string name="title_activity_bottom_sheet">BottomSheetActivity</string>
     <string name="show_bottom_sheet">Show bottom sheet</string>
+
+    <string name="choice_timer_choose_duration">Choisissez la durée</string>
+    <string name="choice_timer_choose_pause">Choisissez le temps de pause</string>
+    <string name="choice_timer_choose_repetition">Choisissez la répétition</string>
+    <string name="choice_timer_choose_start">Démarrer l\'exercice</string>
 </resources>
