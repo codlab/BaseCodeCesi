@@ -40,4 +40,9 @@ implements IActivityListener {
     public void onFragmentSet() {
         //si j'ai besoin de gestion de callback ici!
     }
+
+    public void appelTimerFragment(int duration, int duration_pause, int number_repetition) {
+        TimerFragment fragment = TimerFragment.newInstance(duration, duration_pause, number_repetition);
+        _stack_controller.push(fragment);
+    }
 }
