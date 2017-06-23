@@ -1,6 +1,7 @@
 package fr.cesi.basecode.example.timer;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,6 +28,10 @@ public class ChoiceTimerFragment extends Fragment implements IPopableFragment {
     private Button _button_repetition;
 
     private Button _button_start;
+
+    private int _duration = 0;
+    private int _duration_pause = 0;
+    private int _number_repetition = 0;
 
     public ChoiceTimerFragment() {
         // Required empty public constructor
@@ -83,7 +88,11 @@ public class ChoiceTimerFragment extends Fragment implements IPopableFragment {
         _button_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TimerActivity activity = (TimerActivity) getActivity();
 
+                activity.appelTimerFragment(_duration,
+                        _duration_pause,
+                        _number_repetition);
             }
         });
     }
