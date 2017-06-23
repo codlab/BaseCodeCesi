@@ -37,7 +37,6 @@ dependencies {
     
     //ajout bouton
     
-
 compile
     'com.android.support:appcompat-v7:25.3.1'compile
     'com.github.Raizlabs.DBFlow:dbflow-core:4.0.4'compile
