@@ -3,17 +3,13 @@
 
     <application>
         <activity android:name="fr.cesi.example.ui.example.ExampleActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
         <activity
             android:name="fr.cesi.example.ui.example.BottomSheetActivity"
             android:label="@string/title_activity_bottom_sheet"
             android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name="fr.cesi.basecode.example.timer.TimerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
