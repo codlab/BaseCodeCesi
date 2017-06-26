@@ -51,4 +51,5 @@ dependencies {
     //bottom sheet library : use with maps
     compile 'com.flipboard:bottomsheet-core:1.5.3'
     compile 'com.flipboard:bottomsheet-commons:1.5.3' // optional
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
