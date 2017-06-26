@@ -33,16 +33,14 @@ android {
         }
     }
 }
-
+//https://github.com/lzyzsd/CircleProgress
+//https://github.com/code-troopers/android-betterpickers
+//ADD DBFlow dpendency - database management abstracted for android
 dependencies {
 
-    //https://github.com/lzyzsd/CircleProgress
-    compile 'com.github.lzyzsd:circleprogress:1.2.1'
-    //fin CircleProgress
 
-    //https://github.com/code-troopers/android-betterpickers
+    compile 'com.github.lzyzsd:circleprogress:1.2.1'
     compile "com.code-troopers.betterpickers:library:3.1.0"
-    //fin better pickers
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -52,7 +50,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
 
-    //ADD DBFlow dpendency - database management abstracted for android
+
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow:4.0.4"
