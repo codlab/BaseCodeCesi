@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorLoading">#FFB946</color>
     <color name="colorUnfinished">#5c5e5b</color>
+    <color name="colorWorking">#f9b64a</color>
 </resources>

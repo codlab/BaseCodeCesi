@@ -1,13 +1,41 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context="fr.cesi.basecode.fragment.working">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.github.lzyzsd.circleprogress.DonutProgress
+        android:id="@+id/donut_progress"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        custom:donut_finished_color="@color/colorWorking"
+        custom:donut_finished_stroke_width="20dp"
+        custom:donut_progress="100"
+        custom:donut_unfinished_color="@color/colorUnfinished"
+        custom:donut_unfinished_stroke_width="20dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/main_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:src="@drawable/main_btn"
+
+        />
+
+    <ImageView
+        android:id="@+id/stop_btn"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/stop" />
 
 </FrameLayout>

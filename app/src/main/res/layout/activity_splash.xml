@@ -7,9 +7,10 @@
     android:background="@color/colorPrimaryDark"
     android:gravity="center"
     tools:context="fr.cesi.basecode.trainingtimer.splash">
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
 </LinearLayout>
