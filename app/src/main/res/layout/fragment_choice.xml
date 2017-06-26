@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimaryDark"
+    tools:context="fr.cesi.basecode.trainingtimer.timer">
+
+    <Button
+        android:id="@+id/button_choice_timer_choose_duration"
+        android:textColor="#61DAFF"
+        android:textSize="10sp"
+        android:background="@drawable/buttonshape"
+        android:layout_width="@dimen/button_choice_timer_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/choice_timer_choose_duration" />
+
+    <Button
+        android:id="@+id/button_choice_timer_choose_pause"
+        android:textColor="#61DAFF"
+        android:textSize="10sp"
+        android:background="@drawable/buttonshape"
+        android:layout_width="@dimen/button_choice_timer_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/choice_timer_choose_pause" />
+
+    <Button
+        android:id="@+id/button_choice_timer_choose_repetition"
+        android:textColor="#61DAFF"
+        android:textSize="10sp"
+        android:background="@drawable/buttonshape"
+        android:layout_width="@dimen/button_choice_timer_width"
+        android:layout_height="wrap_content"
+        android:text="@string/choice_timer_choose_repetition"
+        android:layout_margin="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/margin_buttons_choice_timer"/>
+
+    <Button
+        android:id="@+id/button_choice_timer_choose_start"
+        android:textColor="#61DAFF"
+        android:textSize="10sp"
+        android:background="@drawable/buttonshape"
+        android:layout_width="@dimen/button_choice_timer_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_margin"
+        android:text="@string/choice_timer_choose_start" />
+
+</LinearLayout>

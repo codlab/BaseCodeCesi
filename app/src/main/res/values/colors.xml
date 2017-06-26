@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    -    <color name="colorPrimary">#000000</color>
+    -    <color name="colorPrimaryDark">#000000</color>
+    -    <color name="colorAccent">#FF4081</color>
+    -    <color name="colorLoading">#FFB946</color>
+    -    <color name="colorUnfinished">#5c5e5b</color>
+    -    <color name="colorWorking">#f9b64a</color>
+    -    <color name="colorWaiting">#58E2C2</color>
+    -    <color name="colorOnPause">#B8E986</color>
+    <color name="white">#fff</color>
+
 </resources>
