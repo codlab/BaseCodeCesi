@@ -10,5 +10,5 @@
     <dimen name="textcount">40sp</dimen>
     <dimen name="bottom_margin_bar">4dp</dimen>
     <dimen name="top_margin_bar">4dp</dimen>
-    <dimen name="textrepetition">20dp</dimen>
+    <dimen name="textrepetition">30dp</dimen>
 </resources>
