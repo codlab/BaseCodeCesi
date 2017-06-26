@@ -6,4 +6,6 @@
     <dimen name="button_choice_timer_width">200dp</dimen>
     <dimen name="margin_buttons_choice_timer">32dp</dimen>
     <dimen name="timer_size">300dp</dimen>
+    <dimen name="button_waiting">150</dimen>
+    <dimen name="textcount">20sp</dimen>
 </resources>
