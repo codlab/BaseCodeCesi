@@ -7,5 +7,6 @@
     <string name="choice_timer_choose_repetition">Choisissez la répétition</string>
     <string name="choice_timer_choose_start">Démarrer l\'exercice</string>
     <string name="hello_blank_fragment">hello</string>
+    <string name="reglages">réglages</string>
 
 </resources>
