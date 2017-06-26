@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import fr.cesi.basecode.fragment.R;
+import fr.cesi.basecode.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
