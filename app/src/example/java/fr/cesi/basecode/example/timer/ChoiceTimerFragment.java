@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
 
@@ -21,13 +24,26 @@ import fr.cesi.basecode.R;
  */
 public class ChoiceTimerFragment extends Fragment implements IPopableFragment {
 
-    private Button _button_duration;
+    @BindView(R.id.button_choice_timer_choose_duration)
+    Button _button_duration;
 
-    private Button _button_pause_duration;
+    @BindView(R.id.button_choice_timer_choose_pause)
+    Button _button_pause_duration;
 
-    private Button _button_repetition;
+    @BindView(R.id.button_choice_timer_choose_repetition)
+    Button _button_repetition;
 
-    private Button _button_start;
+    @BindView(R.id.button_choice_timer_choose_start)
+    Button _button_start;
+
+    @OnClick(R.id.button_choice_timer_choose_start)
+    public void onStartClicked() {
+        TimerActivity activity = (TimerActivity) getActivity();
+
+        activity.appelTimerFragment(_duration,
+                _duration_pause,
+                _number_repetition);
+    }
 
     private int _duration = 0;
     private int _duration_pause = 0;
@@ -59,42 +75,7 @@ public class ChoiceTimerFragment extends Fragment implements IPopableFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        _button_duration = (Button) view.findViewById(R.id.button_choice_timer_choose_duration);
-        _button_pause_duration = (Button) view.findViewById(R.id.button_choice_timer_choose_pause);
-        _button_repetition = (Button) view.findViewById(R.id.button_choice_timer_choose_repetition);
-        _button_start = (Button) view.findViewById(R.id.button_choice_timer_choose_start);
-
-        _button_duration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        _button_pause_duration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        _button_repetition.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        _button_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TimerActivity activity = (TimerActivity) getActivity();
-
-                activity.appelTimerFragment(_duration,
-                        _duration_pause,
-                        _number_repetition);
-            }
-        });
+        ButterKnife.bind(this, view);
     }
 
     @Override
