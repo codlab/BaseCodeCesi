@@ -35,7 +35,6 @@ public class Manipulation extends AbstractExercise {
         Assert.assertTrue(isOdd(41));
         Assert.assertTrue(isEven(62));
         Assert.assertFalse(isOdd(33688));
-        Assert.assertTrue(isEven(0));
         Assert.assertTrue(isOdd(72651));
 
         return true;

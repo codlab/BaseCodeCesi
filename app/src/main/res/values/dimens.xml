@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="default_margin">16dp</dimen>
+    <dimen name="big_margin">25dp</dimen>
     <dimen name="default_padding">8dp</dimen>
+    <dimen name="button_choice_timer_width">200dp</dimen>
+    <dimen name="margin_buttons_choice_timer">32dp</dimen>
+    <dimen name="timer_size">300dp</dimen>
 </resources>
