@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import fr.cesi.basecode.example.timer.TimerActivity;
+import fr.cesi.basecode.R;
+
 
 public class splashScreenActivity extends AppCompatActivity {
 
@@ -14,8 +15,7 @@ public class splashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.onCreate(savedInstanceState);
-        setContentView(android.support.design.R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_splash_screen);
 
         _handler = new Handler();
         _handler.postDelayed(new Runnable() {
@@ -26,7 +26,7 @@ public class splashScreenActivity extends AppCompatActivity {
         },3000);
     }
     private void startNextActivity() {
-        Intent intent = new Intent(this, TimerActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
         finish();
