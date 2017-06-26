@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.base.controllers.fragment.StackController;
 import fr.cesi.basecode.R;
