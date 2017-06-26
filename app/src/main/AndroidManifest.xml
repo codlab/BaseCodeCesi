@@ -14,7 +14,7 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-        <activity android:name=".trainingtimer.timer"></activity>
+        <activity android:name=".trainingtimer.timer"/>
     </application>
 
 </manifest>
