@@ -41,7 +41,6 @@ dependencies {
     })
 
     //ADD DBFlow dpendency - database management abstracted for android
-    
 
     //bottom sheet library : use with maps
     compile 'com.android.support:appcompat-v7:25.3.1'
