@@ -51,7 +51,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
-            custom:donut_finished_color="@color/colorWorking"
+            custom:donut_finished_color="@color/colorOnPause"
             custom:donut_finished_stroke_width="20dp"
             custom:donut_progress="100"
             custom:donut_unfinished_color="@color/colorUnfinished"
@@ -65,7 +65,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:clickable="true"
-            android:src="@drawable/main_btn"
+            android:src="@drawable/main_btn_pause"
 
             />
 
@@ -74,7 +74,7 @@
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:background="@drawable/stop" />
+            android:background="@drawable/stopOnpause" />
 
     </FrameLayout>
 
