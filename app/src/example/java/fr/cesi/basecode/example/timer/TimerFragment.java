@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
 
 
@@ -15,7 +16,7 @@ import fr.cesi.basecode.R;
  * Use the {@link TimerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimerFragment extends Fragment {
+public class TimerFragment extends Fragment implements IPopableFragment {
     private static final String ARG_DURATION = "duration";
     private static final String ARG_DURATION_PAUSE = "duration_pause";
     private static final String ARG_NUMBER_REPETITION = "number_repetition";
@@ -63,4 +64,13 @@ public class TimerFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_timer, container, false);
     }
 
+    @Override
+    public boolean hasParent() {
+        return true;
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        return false;
+    }
 }
