@@ -34,21 +34,25 @@ android {
     }
 }
 
+//ADD DBFlow dpendency - database management abstracted for android
+//bottom sheet library : use with maps
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-    //ADD DBFlow dpendency - database management abstracted for android
-
-    //bottom sheet library : use with maps
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.github.Raizlabs.DBFlow:dbflow-core:4.0.4'
-    compile 'com.github.Raizlabs.DBFlow:dbflow:4.0.4'
-    compile 'com.flipboard:bottomsheet-core:1.5.3'
-    compile 'com.flipboard:bottomsheet-commons:1.5.3'
-    compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
-    annotationProcessor 'com.github.Raizlabs.DBFlow:dbflow-processor:4.0.4'
+
+
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.0.4"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:4.0.4"
+    compile "com.github.Raizlabs.DBFlow:dbflow:4.0.4"
+
+    compile 'com.flipboard:bottomsheet-core:1.5.3'
+    compile 'com.flipboard:bottomsheet-commons:1.5.3' // optional
+
+
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }
