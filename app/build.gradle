@@ -24,7 +24,7 @@ android {
     }
     productFlavors {
         main {
-
+            applicationId "fr.cesi.tasfaim"
         }
 
         example {
@@ -41,16 +41,19 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-    // Buttons
+
     compile 'info.hoang8f:fbutton:1.0.5'
 
 
-    //ADD DBFlow dpendency - database management abstracted for android
+
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:4.0.4"
     compile "com.github.Raizlabs.DBFlow:dbflow:4.0.4"
 
-    //bottom sheet library : use with maps
+
     compile 'com.flipboard:bottomsheet-core:1.5.3'
-    compile 'com.flipboard:bottomsheet-commons:1.5.3' // optional
+    compile 'com.flipboard:bottomsheet-commons:1.5.3'
+
+    compile 'com.google.android.gms:play-services-maps:11.0.1'
+
 }
