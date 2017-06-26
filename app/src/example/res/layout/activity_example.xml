@@ -49,19 +49,6 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/validate" />
 
-        <is.arontibo.library.ElasticDownloadView
-            android:id="@+id/elastic_download_view"
-            android:layout_width="match_parent"
-            android:layout_height="157dp"
-            android:layout_centerInParent="true" />
-
-        <com.rey.material.widget.Button
-            style="@style/YourRippleDrawableStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BUTTON"
-            app:rd_enable="true" />
-
     </LinearLayout>
 
 
