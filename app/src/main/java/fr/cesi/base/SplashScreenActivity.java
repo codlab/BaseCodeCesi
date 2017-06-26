@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import fr.cesi.basecode.R;
+import ui.maps.MapsActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -25,7 +26,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        //Intent intent = new Intent(TimerActivity.class);
+        Intent intent = new Intent(this,MapsActivity.class);
+        startActivity(intent);
 
         finish();
     }
