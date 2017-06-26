@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -22,6 +23,17 @@
         <activity
             android:name="fr.cesi.base.MapsActivity"
             android:label="@string/title_activity_maps">
+
+        <activity
+            android:name=".example.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".example.splashScreenActivity"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/AppTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
