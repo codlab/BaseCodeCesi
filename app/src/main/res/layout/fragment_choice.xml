@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/button_choice_timer_choose_duration"
-        android:textColor="#61DAFF"
+        android:textColor="@color/colorWaiting"
         android:textSize="10sp"
         android:background="@drawable/buttonshape"
         android:layout_width="@dimen/button_choice_timer_width"
@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/button_choice_timer_choose_pause"
-        android:textColor="#61DAFF"
+        android:textColor="@color/colorWaiting"
         android:textSize="10sp"
         android:background="@drawable/buttonshape"
         android:layout_width="@dimen/button_choice_timer_width"
@@ -29,7 +29,7 @@
 
     <Button
         android:id="@+id/button_choice_timer_choose_repetition"
-        android:textColor="#61DAFF"
+        android:textColor="@color/colorWaiting"
         android:textSize="10sp"
         android:background="@drawable/buttonshape"
         android:layout_width="@dimen/button_choice_timer_width"
