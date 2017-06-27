@@ -3,13 +3,9 @@ package fr.cesi.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
-import fr.cesi.base.controllers.fragment.IPopableFragment;
-import fr.cesi.base.controllers.fragment.StackController;
 import fr.cesi.basecode.R;
 
 public class StartActivity extends AppCompatActivity {
@@ -36,7 +32,7 @@ public class StartActivity extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        Intent intent = new Intent(this, menu_activity.class);
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
 
         finish();
