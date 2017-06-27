@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="fr.cesi.ui.start_activity">
+    tools:context="fr.cesi.ui.StartActivity">
 
 
     <LinearLayout
@@ -38,7 +38,6 @@
             android:text="Entrez"
             android:textColor="#FFF" />
     </LinearLayout>
-
 
 
 </FrameLayout>
