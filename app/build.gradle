@@ -61,5 +61,7 @@ dependencies {
     compile 'com.flipboard:bottomsheet-commons:1.5.3'
 
     compile 'com.google.android.gms:play-services-maps:11.0.1'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
 }
