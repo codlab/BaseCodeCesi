@@ -34,7 +34,7 @@ public class choice extends Fragment implements IPopableFragment {
     Button _button_repetition;
 
     @BindView(R.id.button_choice_timer_start)
-    Button _button_start;
+    View _button_start;
 
     @OnClick(R.id.button_choice_timer_start)
     public void onStartClicked() {
