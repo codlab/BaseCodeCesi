@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.codetroopers.betterpickers.numberpicker.NumberPickerBuilder;
+import com.codetroopers.betterpickers.radialtimepicker.RadialTimePickerDialogFragment;
+import com.codetroopers.betterpickers.timepicker.TimePickerBuilder;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,6 +43,34 @@ public class choice extends Fragment implements IPopableFragment {
     @OnClick(R.id.button_choice_timer_start)
     public void onStartClicked() {
         //
+    }
+
+    @OnClick(R.id.button_choice_timer_duration)
+    public void onClickDuration(){
+        TimePickerBuilder tpb = new TimePickerBuilder()
+                .setFragmentManager(getChildFragmentManager())
+                .setStyleResId(R.style.BetterPickersDialogFragment);
+        tpb.show();
+        new onValidate(int value){
+            onClickDuration = int value
+        }
+    }
+
+    @OnClick(R.id.button_choice_timer_pause)
+    public void onClickPause(){
+        TimePickerBuilder tpb = new TimePickerBuilder()
+                .setFragmentManager(getChildFragmentManager())
+                .setStyleResId(R.style.BetterPickersDialogFragment);
+        tpb.show();
+    }
+
+    @OnClick(R.id.button_choice_timer_repetition)
+    public void onClickRepetition() {
+        NumberPickerBuilder npb = new NumberPickerBuilder()
+                .setFragmentManager(getChildFragmentManager())
+                .setStyleResId(R.style.BetterPickersDialogFragment)
+                .setLabelText("répétition");
+        npb.show();
     }
 
     private int _duration = 0;
