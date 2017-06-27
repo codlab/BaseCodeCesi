@@ -3,14 +3,21 @@
  */
 package fr.cesi.basecode.example;
 
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import fr.cesi.basecode.R;
 
@@ -33,6 +40,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMyLocationEnabled(true);
 
     }
+
+    private static final LatLng CONNEMARA = new LatLng(44.83996, -0.581682);
+    private Marker melbourne = mMap.addMarker(new MarkerOptions()
+            .position(CONNEMARA)
+            .title("Connemara Irish Pub")
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.apppinte)));
 }
 
     private BottomSheetBehavior mBottomSheetBehavior;
