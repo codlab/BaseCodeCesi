@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import fr.cesi.basecode.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link QuestionFragment#newInstance} factory method to
@@ -40,9 +41,10 @@ public class QuestionFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
+
      * @param ask Parameter 1.
      * @param img Parameter 2.
-     * @return A new instance of fragment QuestionFragment.
+
      */
     // TODO: Rename and change types and number of parameters
     public static QuestionFragment newInstance(String text, int image, String bouton1, String bouton2, String bouton3, String bouton4 ) {
