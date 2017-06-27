@@ -52,7 +52,7 @@ public class MenuActivity3 extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        Intent intent = new Intent(this, Question.class);
+        Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
 
         finish();
