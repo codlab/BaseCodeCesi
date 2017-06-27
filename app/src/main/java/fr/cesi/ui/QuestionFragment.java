@@ -41,20 +41,21 @@ public class QuestionFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment QuestionFragment.
+
+     * @param ask Parameter 1.
+     * @param img Parameter 2.
+
      */
     // TODO: Rename and change types and number of parameters
     public static QuestionFragment newInstance(String text, int image, String bouton1, String bouton2, String bouton3, String bouton4 ) {
         QuestionFragment fragment = new QuestionFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_ASK, ask);
-        args.putString(ARG_IMG, img);
-        args.putString(ARG_BTN1, btn1);
-        args.putString(ARG_BTN2, btn2);
-        args.putString(ARG_BTN3, btn3);
-        args.putString(ARG_BTN4, btn4);
+        args.putString(ARG_ASK, text);
+        args.putInt(ARG_IMG, image);
+        args.putString(ARG_BTN1, bouton1);
+        args.putString(ARG_BTN2, bouton2);
+        args.putString(ARG_BTN3, bouton3);
+        args.putString(ARG_BTN4, bouton4);
         fragment.setArguments(args);
         return fragment;
     }
