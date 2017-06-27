@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">BaseCode</string>
     <string name="enfer_du_cul">enfer du cul</string>
+    <string name="hello_blank_fragment">
+Si la poule a 3 poussins, son ami sera un chien, si la poule a 4 poussins, son ami sera un chat,
+        si la poule a 5 poussins son ami sera le taureau. Si c’est un autre nombre de poussins son ami
+        sera la vache. Peux tu me dire quel est l’ami de la poule ?</string>
 </resources>
