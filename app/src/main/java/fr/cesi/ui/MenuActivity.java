@@ -19,7 +19,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_activity);
+        setContentView(R.layout.activity_menu_activity2);
 
 
         button3 = (Button) findViewById(R.id.button3);
