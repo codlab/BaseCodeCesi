@@ -9,38 +9,42 @@
     android:weightSum="1">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.13">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textcount" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="hello"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textcount"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_marginBottom="@dimen/bottom_margin_bar"
+            android:layout_marginTop="@dimen/top_margin_bar"/>
 
-
-
-
-        </LinearLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1/5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textrepetition"
+            android:gravity="center"/>
 
     </LinearLayout>
-
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:custom="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="284dp"
+        android:layout_height="350dp"
         android:background="@color/colorPrimaryDark"
         tools:context="fr.cesi.basecode.fragment.working">
 
@@ -95,9 +99,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/default_margin"
                 android:layout_marginBottom="@dimen/margin_buttons_choice_timer"
-                android:background="@drawable/waitingbutton"
+                android:background="@drawable/workingbutton"
                 android:text="@string/reglages"
-                android:textColor="@color/colorUnfinished"
+                android:textColor="@color/white"
                 android:textSize="10sp" />
 
         </LinearLayout>

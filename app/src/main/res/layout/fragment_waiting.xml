@@ -15,9 +15,6 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +38,6 @@
                 android:textSize="@dimen/textrepetition"
                 android:gravity="center"/>
 
-
     </LinearLayout>
 
 
@@ -49,7 +45,7 @@
         xmlns:custom="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="284dp"
+        android:layout_height="350dp"
         android:background="@color/colorPrimaryDark"
         tools:context="fr.cesi.basecode.fragment.working">
 
@@ -65,6 +61,7 @@
             custom:donut_progress="100"
             custom:donut_unfinished_color="@color/colorUnfinished"
             custom:donut_unfinished_stroke_width="20dp"
+
 
             />
 
@@ -106,7 +103,7 @@
                 android:layout_marginBottom="@dimen/margin_buttons_choice_timer"
                 android:background="@drawable/waitingbutton"
                 android:text="@string/reglages"
-                android:textColor="@color/colorUnfinished"
+                android:textColor="@color/white"
                 android:textSize="10sp" />
 
         </LinearLayout>
