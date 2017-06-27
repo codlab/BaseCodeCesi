@@ -10,10 +10,17 @@
     tools:context="fr.cesi.base.SplashScreenActivity">
 
     <ImageView
+
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitCenter"
         android:src="@drawable/splash_screen" />
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash_screen"
+        android:scaleType="fitCenter" />
+
 
 </LinearLayout>
