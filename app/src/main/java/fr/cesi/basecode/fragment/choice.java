@@ -1,35 +1,49 @@
 package fr.cesi.basecode.fragment;
 
-import android.content.Context;
-import android.net.Uri;
+
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link choice.OnFragmentInteractionListener} interface
- * to handle interaction events.
  * Use the {@link choice#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class choice extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class choice extends Fragment implements IPopableFragment {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    @BindView(R.id.button_choice_timer_duration)
+    Button _button_duration;
 
-    private OnFragmentInteractionListener mListener;
+    @BindView(R.id.button_choice_timer_pause)
+    Button _button_pause_duration;
+
+    @BindView(R.id.button_choice_timer_repetition)
+    Button _button_repetition;
+
+    @BindView(R.id.button_choice_timer_start)
+    Button _button_start;
+
+    @OnClick(R.id.button_choice_timer_start)
+    public void onStartClicked() {
+        //
+    }
+
+    private int _duration = 0;
+    private int _duration_pause = 0;
+    private int _number_repetition = 0;
 
     public choice() {
         // Required empty public constructor
@@ -39,27 +53,11 @@ public class choice extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment choice.
+     * @return A new instance of fragment ChoiceTimerFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static choice newInstance(String param1, String param2) {
+    public static choice newInstance() {
         choice fragment = new choice();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -69,42 +67,20 @@ public class choice extends Fragment {
         return inflater.inflate(R.layout.fragment_choice, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ButterKnife.bind(this, view);
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    public boolean hasParent() {
+        return false;
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    public boolean onBackPressed() {
+        return false;
     }
 }

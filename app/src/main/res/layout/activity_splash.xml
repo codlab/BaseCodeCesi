@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:gravity="center"
-    tools:context="fr.cesi.basecode.trainingtimer.splash">
+    tools:context="fr.cesi.basecode.fragment.SplashActivity">
 
     <ImageView
         android:layout_width="wrap_content"

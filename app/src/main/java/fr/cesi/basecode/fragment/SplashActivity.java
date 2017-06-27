@@ -1,4 +1,4 @@
-package fr.cesi.basecode.trainingtimer;
+package fr.cesi.basecode.fragment;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.os.Bundle;
 import fr.cesi.basecode.R;
 
 
-public class splash extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private Handler _handler;
 
@@ -28,7 +28,7 @@ public class splash extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        Intent intent = new Intent(this, timer.class);
+        Intent intent = new Intent(this, TimerActivity.class);
         startActivity(intent);
         finish();
     }

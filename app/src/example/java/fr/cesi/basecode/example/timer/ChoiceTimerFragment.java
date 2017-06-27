@@ -38,11 +38,7 @@ public class ChoiceTimerFragment extends Fragment implements IPopableFragment {
 
     @OnClick(R.id.button_choice_timer_choose_start)
     public void onStartClicked() {
-        TimerActivity activity = (TimerActivity) getActivity();
-
-        activity.appelTimerFragment(_duration,
-                _duration_pause,
-                _number_repetition);
+        //
     }
 
     private int _duration = 0;
