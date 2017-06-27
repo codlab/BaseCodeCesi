@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 
 import fr.cesi.basecode.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link question_fragment#newInstance} factory method to
+ * Use the {@link QuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class question_fragment extends Fragment {
+public class QuestionFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_ASK = "ask";
@@ -32,7 +33,7 @@ public class question_fragment extends Fragment {
     private String btn4;
 
 
-    public question_fragment() {
+    public QuestionFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +43,11 @@ public class question_fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment question_fragment.
+     * @return A new instance of fragment QuestionFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static question_fragment newInstance(String text, int image, String bouton1, String bouton2, String bouton3, String bouton4 ) {
-        question_fragment fragment = new question_fragment();
+    public static QuestionFragment newInstance(String text, int image, String bouton1, String bouton2, String bouton3, String bouton4 ) {
+        QuestionFragment fragment = new QuestionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_ASK, ask);
         args.putString(ARG_IMG, img);
