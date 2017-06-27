@@ -5,6 +5,9 @@ package fr.cesi.basecode.example;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,7 +24,6 @@ import fr.cesi.basecode.R;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap = googleMap;
         mMap.setMyLocationEnabled(true);
+
     }
 
     private static final LatLng CONNEMARA = new LatLng(44.83996, -0.581682);
@@ -44,3 +47,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             .title("Connemara Irish Pub")
             .icon(BitmapDescriptorFactory.fromResource(R.drawable.apppinte)));
 }
+
+    private BottomSheetBehavior mBottomSheetBehavior;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        View bottomSheet = findViewById( R.id.bottom_sheet );
+        Button button1 = (Button) findViewById( R.id.button_1 );
+
+        button1.setOnClickListener(this);
+
+        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch( v.getId() ) {
+            case R.id.button_1: {
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            }
+        }
+    }
