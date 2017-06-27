@@ -38,14 +38,32 @@
         android:layout_margin="@dimen/default_margin"
         android:layout_marginBottom="@dimen/margin_buttons_choice_timer"/>
 
-    <Button
-        android:id="@+id/button_choice_timer_choose_start"
-        android:textColor="#61DAFF"
-        android:textSize="10sp"
-        android:background="@drawable/buttonshape"
-        android:layout_width="@dimen/button_choice_timer_width"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/big_margin"
-        android:text="@string/choice_timer_choose_start" />
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/colorPrimaryDark"
+        >
+
+
+        <ImageView
+            android:id="@+id/main_btn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:src="@drawable/main_btn_waiting"
+
+            />
+
+        <ImageView
+            android:id="@+id/stop_btn"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/marche" />
+
+    </FrameLayout>
 
 </LinearLayout>
