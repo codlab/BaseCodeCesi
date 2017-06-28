@@ -84,8 +84,6 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     }
 
     @Override
-<<<<<<< HEAD
-=======
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -95,7 +93,6 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     }
 
     @Override
->>>>>>> a910c17d898ea8c91b5296ad091c0b7e4bdd73f2
     public boolean hasParent() {
         return false;
     }
