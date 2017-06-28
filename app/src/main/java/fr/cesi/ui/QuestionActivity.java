@@ -3,6 +3,7 @@ package fr.cesi.ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import fr.cesi.base.controllers.fragment.AbstractPopableActivity;
 import fr.cesi.base.controllers.fragment.IActivityListener;
@@ -13,10 +14,13 @@ import fr.cesi.basecode.R;
 public class QuestionActivity extends AbstractPopableActivity
         implements IActivityListener {
 
+    private FrameLayout _question_container;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        _question_container = (FrameLayout) findViewById(R.id.contenu_questions);
     }
 
     @Override
@@ -34,7 +38,6 @@ public class QuestionActivity extends AbstractPopableActivity
 
     @Override
     protected StackController createStackController() {
-        View _main_content;
-        return new StackController(this, _main_content);
+        return new StackController(this, _question_container);
     }
 }

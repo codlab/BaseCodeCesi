@@ -2,11 +2,14 @@ package fr.cesi.ui;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
 
 
@@ -15,7 +18,7 @@ import fr.cesi.basecode.R;
  * Use the {@link QuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class QuestionFragment extends Fragment {
+public class QuestionFragment extends Fragment implements IPopableFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_ASK = "ask";
@@ -26,7 +29,7 @@ public class QuestionFragment extends Fragment {
     private static final String ARG_BTN4 = "btn4";
     // TODO: Rename and change types of parameters
     private String ask;
-    private String img;
+    private int img;
     private String btn1;
     private String btn2;
     private String btn3;
@@ -65,7 +68,7 @@ public class QuestionFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             ask = getArguments().getString(ARG_ASK);
-            img = getArguments().getString(ARG_IMG);
+            img = getArguments().getInt(ARG_IMG);
             btn1 = getArguments().getString(ARG_BTN1);
             btn2 = getArguments().getString(ARG_BTN2);
             btn3 = getArguments().getString(ARG_BTN3);
@@ -80,5 +83,23 @@ public class QuestionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_question_fragment, container, false);
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ImageView vue = (ImageView) view.findViewById(R.id.poule);
+
+        vue.setImageResource(img);
+    }
+
+    @Override
+    public boolean hasParent() {
+        return false;
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        return false;
+    }
 }
 
