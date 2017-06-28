@@ -1,4 +1,4 @@
-package fr.cesi.basecode.example;
+package fr.cesi.bar.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,10 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import fr.cesi.basecode.R;
+import fr.cesi.bar.map.MapsActivity;
 
 
-public class splashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     private Handler _handler;
 

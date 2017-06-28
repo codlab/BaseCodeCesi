@@ -1,4 +1,4 @@
-package fr.cesi.example.ui.example;
+package fr.cesi.bar.map;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +11,7 @@ import com.flipboard.bottomsheet.BottomSheetLayout;
 import fr.cesi.basecode.R;
 
 
-public class BottomSheetActivity extends AppCompatActivity {
+public class BottomSheet extends AppCompatActivity {
 
     private Button _show_bottom_sheet_button;
     private BottomSheetLayout _bottom_sheet_layout;

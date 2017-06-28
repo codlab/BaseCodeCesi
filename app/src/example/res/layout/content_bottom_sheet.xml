@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.cesi.BottomSheet"
+    tools:context="fr.cesi.bar.map.BottomSheetTest"
     tools:showIn="@layout/activity_bottom_sheet">
 
 </android.support.constraint.ConstraintLayout>
