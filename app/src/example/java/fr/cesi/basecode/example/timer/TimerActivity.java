@@ -1,5 +1,9 @@
 package fr.cesi.basecode.example.timer;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -35,6 +39,24 @@ public class TimerActivity extends AbstractPopableActivity
     @Override
     protected void onResume() {
         super.onResume();
+
+        //**************************************************************
+        //here we will request map permission
+        //https://developer.android.com/training/permissions/requesting.html
+        int access_fine_location = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        int access_coarce_location = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if(access_coarce_location != PackageManager.PERMISSION_GRANTED ||
+                access_fine_location != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_CONTACTS},
+                    1337); //here, request callback int to 1337 - used when manage response from call
+        } else {
+            //here we can manage maps start
+        }
+        //**************************************************************
 
         IPopableFragment current_stack_head = getStackController().head();
         if (current_stack_head == null) {
