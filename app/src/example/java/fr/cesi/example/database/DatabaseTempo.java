@@ -7,9 +7,9 @@ import com.raizlabs.android.dbflow.annotation.Database;
  */
 
 @Database(name = DatabaseTempo.NAME, version = DatabaseTempo.VERSION)
-public class DatabaseTempo {
+public class DatabaseCommerce {
 
-    public final static String NAME = "DatabaseTempo";
+    public final static String NAME = "DatabaseCommerce";
 
     public final static int VERSION = 1;
 }
