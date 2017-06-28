@@ -3,6 +3,7 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorPrimaryDark"
     android:gravity="center"
     android:orientation="vertical"
@@ -16,40 +17,39 @@
         android:weightSum="1">
 
         <TextView
+            android:id="@+id/counter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hello"
             android:gravity="center"
+            tools:text="Compteur"
             android:textColor="@color/white"
             android:textSize="@dimen/textcount" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/white"
             android:layout_marginBottom="@dimen/bottom_margin_bar"
-            android:layout_marginTop="@dimen/top_margin_bar"/>
+            android:layout_marginTop="@dimen/top_margin_bar"
+            android:background="@color/white" />
 
         <TextView
+            android:id="@+id/repetition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="1/5"
             android:textColor="@color/white"
-            android:textSize="@dimen/textrepetition"
-            android:gravity="center"/>
+            android:textSize="@dimen/textrepetition" />
 
     </LinearLayout>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:custom="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:background="@color/colorPrimaryDark"
-        tools:context="fr.cesi.basecode.fragment.working">
+        android:background="@color/colorPrimaryDark">
 
         <com.github.lzyzsd.circleprogress.DonutProgress
-            android:id="@+id/donut_progress"
+            android:id="@+id/working_progress"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_gravity="center"
@@ -59,9 +59,7 @@
             custom:donut_finished_stroke_width="20dp"
             custom:donut_progress="100"
             custom:donut_unfinished_color="@color/colorUnfinished"
-            custom:donut_unfinished_stroke_width="20dp"
-
-            />
+            custom:donut_unfinished_stroke_width="20dp" />
 
         <ImageView
             android:id="@+id/main_btn"
@@ -69,9 +67,22 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:clickable="true"
-            android:src="@drawable/main_btn"
+            android:src="@drawable/main_btn" />
 
-            />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/pause_progress"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            custom:donut_finished_color="@color/colorOnPause"
+            custom:donut_finished_stroke_width="20dp"
+            custom:donut_progress="100"
+            custom:donut_unfinished_color="@color/colorUnfinished"
+            custom:donut_unfinished_stroke_width="20dp" />
+
 
         <ImageView
             android:id="@+id/stop_btn"
@@ -80,28 +91,33 @@
             android:layout_gravity="center"
             android:background="@drawable/stop" />
 
+        <ImageView
+            android:id="@+id/start_btn"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/stoponpause" />
+
     </FrameLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="right">
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="@dimen/margin_buttons_choice_timer"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/resetbutton"
+            android:text="@string/reinitialiser"
+            android:textColor="@color/colorUnfinished"
+            android:textSize="10sp" />
 
-            <Button
-                android:id="@+id/reset_button"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="@dimen/margin_buttons_choice_timer"
-                android:background="@drawable/resetbutton"
-                android:text="@string/reinitialiser"
-                android:textColor="@color/colorUnfinished"
-                android:layout_marginRight="60dp"
-                android:textSize="10sp" />
-
-        </LinearLayout>
-
+    </LinearLayout>
 
 
 </LinearLayout>

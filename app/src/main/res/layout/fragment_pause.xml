@@ -60,9 +60,7 @@
             custom:donut_finished_stroke_width="20dp"
             custom:donut_progress="100"
             custom:donut_unfinished_color="@color/colorUnfinished"
-            custom:donut_unfinished_stroke_width="20dp"
-
-            />
+            custom:donut_unfinished_stroke_width="20dp" />
 
         <ImageView
             android:id="@+id/main_btn"
@@ -70,9 +68,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:clickable="true"
-            android:src="@drawable/main_btn_pause"
-
-            />
+            android:src="@drawable/main_btn_pause" />
 
         <ImageView
             android:id="@+id/stop_btn"

@@ -46,8 +46,9 @@ public class TimerActivity extends AbstractPopableActivity
         return new StackController(this, _main_content);
     }
 
-    public void appelTimerFragment(int duration, int duration_pause, int number_repetition) {
+    public void appelworking(int duration, int duration_pause, int number_repetition) {
         working fragment = working.newInstance(duration, duration_pause, number_repetition);
         getStackController().push(fragment);
     }
 }
+

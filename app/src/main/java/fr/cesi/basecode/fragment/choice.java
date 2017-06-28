@@ -48,7 +48,8 @@ public class choice extends Fragment implements IPopableFragment {
 
     @OnClick(R.id.button_choice_timer_start)
     public void onStartClicked() {
-        //
+        TimerActivity activity = (TimerActivity) getActivity();
+        activity.appelworking(_getDuration, _getPause, _getRepetition);
     }
 
     private int _getDuration;
@@ -67,8 +68,6 @@ public class choice extends Fragment implements IPopableFragment {
                     }
                 });
         hpb.show();
-
-
 
         }
 
@@ -102,9 +101,6 @@ public class choice extends Fragment implements IPopableFragment {
         npb.show();
     }
 
-    private int _duration = 0;
-    private int _duration_pause = 0;
-    private int _number_repetition = 0;
 
     public choice() {
         // Required empty public constructor
