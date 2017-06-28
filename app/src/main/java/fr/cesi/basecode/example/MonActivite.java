@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import fr.cesi.basecode.R;
 
 /**
- * Created by kilam on 27/06/2017.
+
  */
 
 public class MonActivite extends AppCompatActivity {
