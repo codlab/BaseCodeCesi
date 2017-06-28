@@ -13,6 +13,7 @@
             android:id="@+id/commerce"
             android:layout_width="fill_parent"
             android:gravity="center_vertical"
+            android:paddingLeft="25px"
             android:layout_height="80px"
             android:text="Commerce du Coin"
             android:background="@color/blue"
@@ -25,12 +26,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="30px"
         android:background="@color/darkgrey">
 
         <TextView
             android:id="@+id/adresse"
             android:layout_width="fill_parent"
             android:gravity="center_vertical"
+            android:paddingLeft="25px"
             android:layout_height="50px"
             android:text="25 rue Trifouilli les oies"
             android:textColor="@color/white">
@@ -39,6 +42,7 @@
         <TextView
             android:id="@+id/ville"
             android:layout_width="fill_parent"
+            android:paddingLeft="25px"
             android:layout_height="80px"
             android:text="34000 Talence"
             android:textColor="@color/white">
@@ -53,6 +57,7 @@
                 android:id="@+id/lundi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Lundi"
                 android:textColor="@color/white">
@@ -87,6 +92,7 @@
                 android:id="@+id/mardi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Mardi"
                 android:textColor="@color/white">
@@ -121,6 +127,7 @@
                 android:id="@+id/mercredi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Mercredi"
                 android:textColor="@color/white">
@@ -155,6 +162,7 @@
                 android:id="@+id/jeudi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Jeudi"
                 android:textColor="@color/white">
@@ -189,6 +197,7 @@
                 android:id="@+id/vendredi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Vendredi"
                 android:textColor="@color/white">
@@ -223,6 +232,7 @@
                 android:id="@+id/samedi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Samedi"
                 android:textColor="@color/white">
@@ -257,6 +267,7 @@
                 android:id="@+id/dimanche"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25px"
                 android:layout_weight="30"
                 android:text="Dimanche"
                 android:textColor="@color/white">
