@@ -1,13 +1,17 @@
 package fr.cesi.ui;
 
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
@@ -19,21 +23,8 @@ import fr.cesi.basecode.R;
  * create an instance of this fragment.
  */
 public class QuestionFragment extends Fragment implements IPopableFragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_ASK = "ask";
-    private static final String ARG_IMG = "img";
-    private static final String ARG_BTN1 = "btn1";
-    private static final String ARG_BTN2 = "btn2";
-    private static final String ARG_BTN3 = "btn3";
-    private static final String ARG_BTN4 = "btn4";
-    // TODO: Rename and change types of parameters
-    private String ask;
-    private int img;
-    private String btn1;
-    private String btn2;
-    private String btn3;
-    private String btn4;
+
+    private QuestionActivity.Question question;
 
 
     public QuestionFragment() {
@@ -45,21 +36,11 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
      * this fragment using the provided parameters.
      *
 
-     * @param ask Parameter 1.
-     * @param img Parameter 2.
-
      */
     // TODO: Rename and change types and number of parameters
-    public static QuestionFragment newInstance(String text, int image, String bouton1, String bouton2, String bouton3, String bouton4 ) {
+    public static QuestionFragment newInstance(QuestionActivity.Question question) {
         QuestionFragment fragment = new QuestionFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_ASK, text);
-        args.putInt(ARG_IMG, image);
-        args.putString(ARG_BTN1, bouton1);
-        args.putString(ARG_BTN2, bouton2);
-        args.putString(ARG_BTN3, bouton3);
-        args.putString(ARG_BTN4, bouton4);
-        fragment.setArguments(args);
+        fragment.setArguments(question.toBundle());
         return fragment;
     }
 
@@ -67,12 +48,7 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            ask = getArguments().getString(ARG_ASK);
-            img = getArguments().getInt(ARG_IMG);
-            btn1 = getArguments().getString(ARG_BTN1);
-            btn2 = getArguments().getString(ARG_BTN2);
-            btn3 = getArguments().getString(ARG_BTN3);
-            btn4 = getArguments().getString(ARG_BTN4);
+            question = new QuestionActivity.Question(getArguments());
         }
     }
 
@@ -84,18 +60,76 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     }
 
     @Override
-<<<<<<< HEAD
-=======
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         ImageView vue = (ImageView) view.findViewById(R.id.poule);
+        TextView text = (TextView) view.findViewById(R.id.text);
+        ButtonView button1 = (ButtonView) view.findViewById(R.id.button1);
+        ButtonView button2 = (ButtonView) view.findViewById(R.id.button2);
+        ButtonView button3 = (ButtonView) view.findViewById(R.id.button3);
+        ButtonView button4 = (ButtonView) view.findViewById(R.id.button4);
 
-        vue.setImageResource(img);
+        vue.setImageResource(question.imgQuestion);
+        text.setText(question.textQuestion);
+        button1.setText(question.btn1);
+        button2.setText(question.btn2);
+        button3.setText(question.btn3);
+        button4.setText(question.btn4);
+
+        //button1
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(question.btn1);
+            }
+        });
+
+        //button2
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(question.btn2);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(question.btn3);
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(question.btn4);
+            }
+        });
+    }
+
+    private void checkAnswer(String given_answer) {
+        Dialog dialog =......;
+        if(question.reponseQuestion.equals(given_answer)) {
+            // text si gagné
+        } else {
+            // texte si perdu
+        }
+        //ICI > METTRE DANS LE CALLBACK DE LA POPUP
+        ((QuestionActivity) getActivity()).showNextQuestion();
+
+        /*
+        exemple "possible"
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                //ICI > METTRE DANS LE CALLBACK DE LA POPUP
+                ((QuestionActivity) getActivity()).showNextQuestion();
+            }
+        });*/
     }
 
     @Override
->>>>>>> a910c17d898ea8c91b5296ad091c0b7e4bdd73f2
     public boolean hasParent() {
         return false;
     }
