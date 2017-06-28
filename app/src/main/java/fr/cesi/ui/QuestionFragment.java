@@ -2,10 +2,12 @@ package fr.cesi.ui;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
@@ -27,7 +29,7 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     private static final String ARG_BTN4 = "btn4";
     // TODO: Rename and change types of parameters
     private String ask;
-    private String img;
+    private int img;
     private String btn1;
     private String btn2;
     private String btn3;
@@ -66,7 +68,7 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             ask = getArguments().getString(ARG_ASK);
-            img = getArguments().getString(ARG_IMG);
+            img = getArguments().getInt(ARG_IMG);
             btn1 = getArguments().getString(ARG_BTN1);
             btn2 = getArguments().getString(ARG_BTN2);
             btn3 = getArguments().getString(ARG_BTN3);
@@ -82,6 +84,18 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     }
 
     @Override
+<<<<<<< HEAD
+=======
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ImageView vue = (ImageView) view.findViewById(R.id.poule);
+
+        vue.setImageResource(img);
+    }
+
+    @Override
+>>>>>>> a910c17d898ea8c91b5296ad091c0b7e4bdd73f2
     public boolean hasParent() {
         return false;
     }
