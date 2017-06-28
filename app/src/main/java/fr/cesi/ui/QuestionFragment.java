@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,43 +110,35 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     }
 
     private void checkAnswer(String given_answer) {
-        Dialog dialog =......;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setCancelable(false);
+
         if(question.reponseQuestion.equals(given_answer)) {
             // text si gagné
+            builder.setTitle(getString(R.string.result_title1));
+            builder.setMessage(getString(R.string.result_success));
         } else {
             // texte si perdu
+            builder.setTitle(getString(R.string.result_title2));
+            builder.setMessage(getString(R.string.result_failed));
         }
-        //ICI > METTRE DANS LE CALLBACK DE LA POPUP
-        ((QuestionActivity) getActivity()).showNextQuestion();
 
-        /*
-        exemple "possible"
-        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+        DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
             @Override
-            public void onDismiss(DialogInterface dialogInterface) {
+            public void onClick(DialogInterface dialog, int which) {
                 //ICI > METTRE DANS LE CALLBACK DE LA POPUP
                 ((QuestionActivity) getActivity()).showNextQuestion();
             }
-        });*/
+        };
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setCancelable(true);
-        builder.setTitle("Title");
-        builder.setMessage("Message");
         builder.setPositiveButton("Confirm",
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
+                on_click);
+        builder.setNegativeButton(android.R.string.cancel, on_click);
 
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        builder.show();
+
+
     }
 
     @Override

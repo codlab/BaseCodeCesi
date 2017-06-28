@@ -53,9 +53,18 @@ public class QuestionActivity extends AbstractPopableActivity
 
     private void initQuestions() {
         _questions = new ArrayList<>();
-        _questions.add(new Question("Salut", R.drawable.poule,
-                "chat", "chien", "croco", "canard", "croco"));
-        //.......
+        _questions.add(new Question("Si cet animal a de la laine et des cornes, alors c'est un bélier. Cet animal est-il un bélier?", R.drawable.poule,
+                "oui", "non", "", "", "non"));
+        _questions.add(new Question("Marguerite la vache est mariée avec Hugo le taureau. Hugo a perdu Marguerite et la cherche désespérément! Il sait qu'elle a des taches marron. Est-ce que c'est celle-ci?", R.drawable.poule,
+                "oui", "non", "", "", "non"));
+        _questions.add(new Question("Si la poule a 3 poussins, son ami sera un chien, si la poule a 4 poussins, son ami sera un chat, si la poule a 5 poussins son ami sera le taureau. Si c’est un autre nombre de poussins son ami sera la vache. Peux tu me dire quel est l’ami de la poule ?", R.drawable.poule,
+                "chat", "chien", "taureau", "vache", "taureau"));
+        _questions.add(new Question("Si il fait beau, le canard nage, si il pleut, le canard peche, si il fait nuit le canard dort, et si il neige le canard se cache. Que fait le canard ?", R.drawable.poule,
+                "il nage", "il pêche", "il dort", "il se cache", "il pêche"));
+        _questions.add(new Question("Si le corbeau a un fromage : pour faire tomber un fromage du bec de corbeau le renard doit tirer le levier 3 fois. Combien de foisle renard doit-il tirer sur le levier pour récupérer les fromages ?", R.drawable.poule,
+                "2", "3", "4", "6", "6"));
+        _questions.add(new Question("2 tour de moulin suffisent à moudre assez de blé pour nourrir une poule. Pour le nombre de poule que tu vois, combien de tours de moulin faut-il ?", R.drawable.poule,
+                "2", "4", "5", "6", "4"));
     }
 
     @Nullable
