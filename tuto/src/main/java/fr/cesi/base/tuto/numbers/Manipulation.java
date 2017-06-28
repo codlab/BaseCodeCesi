@@ -3,7 +3,6 @@ package fr.cesi.base.tuto.numbers;
 import org.junit.Assert;
 
 import fr.cesi.base.tuto.abstracts.AbstractExercise;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Dans cette exercice, il faut définir le contenu des méthodes pour
