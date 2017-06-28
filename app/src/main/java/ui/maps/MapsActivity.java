@@ -3,8 +3,12 @@ package ui.maps;
 import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.flipboard.bottomsheet.BottomSheetLayout;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -95,4 +99,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         marker.remove();
         _my_markers.remove(marker);
     }
-}
+
+
+
+
+    private View mBottomSheet;
+    private BottomSheetLayout mBottomSheetLayout;
+
+    private TextView infoComerce;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+
+        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
+
+        mBottomSheet = LayoutInflater.from(this)
+                .inflate(R.layout.info_commerce, mBottomSheetLayout, false);
+    }
