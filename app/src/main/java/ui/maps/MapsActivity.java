@@ -24,6 +24,8 @@ import fr.cesi.basecode.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private BottomSheetLayout mBottomSheetLayout;
+    private View mBottomSheet;
     private ArrayList<Marker> _my_markers;
 
     private GoogleMap mMap;
@@ -38,6 +40,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
+
+
+        mBottomSheet = LayoutInflater.from(this)
+                .inflate(R.layout.info_commerce, mBottomSheetLayout, false);
     }
 
 
@@ -78,8 +86,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-
-                deleteMarker(marker);
+                showInformation(marker);
+                //deleteMarker(marker);
 
                 // Return false to indicate that we have not consumed the event and that we wish
                 // for the default behavior to occur (which is for the camera to move such that the
@@ -95,26 +103,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         _my_markers.add(marker);
     }
 
+    private void showInformation(Marker marker) {
+        TextView lundi_ouverture = (TextView) mBottomSheet.findViewById(R.id.lundi_ouverture);
+
+        lundi_ouverture.setText();
+        mBottomSheetLayout.showWithSheetView(mBottomSheet);
+    }
+
     private void deleteMarker(Marker marker) {
         marker.remove();
         _my_markers.remove(marker);
     }
-
-
-
-
-    private View mBottomSheet;
-    private BottomSheetLayout mBottomSheetLayout;
-
-    private TextView infoComerce;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-
-        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
-
-        mBottomSheet = LayoutInflater.from(this)
-                .inflate(R.layout.info_commerce, mBottomSheetLayout, false);
-    }
+}
