@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,7 +22,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import fr.cesi.basecode.R;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
     private GoogleMap mMap;
 
     @Override
@@ -31,6 +32,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        View bottomSheet = findViewById( R.layout.activity_bottom_sheet );
+        Button button1 = (Button) findViewById( R.id.button_1 );
+        button1.setOnClickListener(this);
+        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
     }
 
     @Override
@@ -38,30 +43,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap = googleMap;
         mMap.setMyLocationEnabled(true);
-
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                onMarkerClickListener(marker);
+               // return false;
+                return true;
+            }
+        });
+        mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(44.838578, -0.581482))
+                    .title("Connemara Irish Pub"));
     }
 
-    private static final LatLng CONNEMARA = new LatLng(44.83996, -0.581682);
-    private Marker melbourne = mMap.addMarker(new MarkerOptions()
-            .position(CONNEMARA)
-            .title("Connemara Irish Pub")
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.apppinte)));
-}
+
 
     private BottomSheetBehavior mBottomSheetBehavior;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        View bottomSheet = findViewById( R.id.bottom_sheet );
-        Button button1 = (Button) findViewById( R.id.button_1 );
-
-        button1.setOnClickListener(this);
-
-        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-    }
 
     @Override
     public void onClick(View v) {
@@ -72,3 +69,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }
+
+    private void onMarkerClickListener(Marker marker) {
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
+}
