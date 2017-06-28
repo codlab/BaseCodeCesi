@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.basecode.R;
 
 
@@ -15,7 +16,7 @@ import fr.cesi.basecode.R;
  * Use the {@link QuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class QuestionFragment extends Fragment {
+public class QuestionFragment extends Fragment implements IPopableFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_ASK = "ask";
@@ -80,5 +81,14 @@ public class QuestionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_question_fragment, container, false);
     }
 
+    @Override
+    public boolean hasParent() {
+        return false;
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        return false;
+    }
 }
 

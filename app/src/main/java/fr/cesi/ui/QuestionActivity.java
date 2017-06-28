@@ -13,6 +13,8 @@ import fr.cesi.basecode.R;
 public class QuestionActivity extends AbstractPopableActivity
         implements IActivityListener {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,7 @@ public class QuestionActivity extends AbstractPopableActivity
 
     @Override
     protected StackController createStackController() {
-        View _main_content;
-        return new StackController(this, _main_content);
+        return null;
     }
+
 }
