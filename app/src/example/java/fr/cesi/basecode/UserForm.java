@@ -10,7 +10,7 @@ public class UserForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ubarform);
     }
-}
+//}
 
 
         final Button button = findViewById(R.id.button_id);
@@ -20,4 +20,3 @@ public class UserForm extends AppCompatActivity {
             }
         });
     }
-}
