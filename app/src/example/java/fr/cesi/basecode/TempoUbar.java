@@ -7,7 +7,7 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import fr.cesi.example.database.DatabaseTempo;
 
-@Table(name = "bar", database = DatabaseTempo.class)
+@Table(name = "Bar", database = DatabaseTempo.class)
 public class TempoModel extends BaseModel {
 
     @PrimaryKey(autoincrement = true)
