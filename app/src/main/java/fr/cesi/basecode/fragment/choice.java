@@ -10,9 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.codetroopers.betterpickers.hmspicker.HmsPickerBuilder;
+import com.codetroopers.betterpickers.hmspicker.HmsPickerDialogFragment;
 import com.codetroopers.betterpickers.numberpicker.NumberPickerBuilder;
+import com.codetroopers.betterpickers.numberpicker.NumberPickerDialogFragment;
 import com.codetroopers.betterpickers.radialtimepicker.RadialTimePickerDialogFragment;
 import com.codetroopers.betterpickers.timepicker.TimePickerBuilder;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,23 +51,40 @@ public class choice extends Fragment implements IPopableFragment {
         //
     }
 
+    private int _getDuration;
+    private int _getPause;
+    private int _getRepetition;
+
     @OnClick(R.id.button_choice_timer_duration)
     public void onClickDuration(){
-        TimePickerBuilder tpb = new TimePickerBuilder()
+        HmsPickerBuilder hpb = new HmsPickerBuilder()
                 .setFragmentManager(getChildFragmentManager())
-                .setStyleResId(R.style.BetterPickersDialogFragment);
-        tpb.show();
-        new onValidate(int value){
-            onClickDuration = int value
+                .setStyleResId(R.style.BetterPickersDialogFragment)
+                .addHmsPickerDialogHandler(new HmsPickerDialogFragment.HmsPickerDialogHandlerV2() {
+                    @Override
+                    public void onDialogHmsSet(int reference, boolean isNegative, int hours, int minutes, int seconds) {
+                        _getDuration = hours * 3600 + minutes * 60 + seconds;
+                    }
+                });
+        hpb.show();
+
+
+
         }
-    }
 
     @OnClick(R.id.button_choice_timer_pause)
     public void onClickPause(){
-        TimePickerBuilder tpb = new TimePickerBuilder()
+        HmsPickerBuilder hpb = new HmsPickerBuilder()
                 .setFragmentManager(getChildFragmentManager())
-                .setStyleResId(R.style.BetterPickersDialogFragment);
-        tpb.show();
+                .setStyleResId(R.style.BetterPickersDialogFragment)
+                .addHmsPickerDialogHandler(new HmsPickerDialogFragment.HmsPickerDialogHandlerV2() {
+                    @Override
+                    public void onDialogHmsSet(int reference, boolean isNegative, int hours, int minutes, int seconds) {
+                        _getPause = hours * 3600 + minutes * 60 + seconds;
+                    }
+                });
+
+        hpb.show();
     }
 
     @OnClick(R.id.button_choice_timer_repetition)
@@ -69,7 +92,13 @@ public class choice extends Fragment implements IPopableFragment {
         NumberPickerBuilder npb = new NumberPickerBuilder()
                 .setFragmentManager(getChildFragmentManager())
                 .setStyleResId(R.style.BetterPickersDialogFragment)
-                .setLabelText("répétition");
+                .setLabelText("répétition")
+                .addNumberPickerDialogHandler(new NumberPickerDialogFragment.NumberPickerDialogHandlerV2() {
+                    @Override
+                    public void onDialogNumberSet(int reference, BigInteger number, double decimal, boolean isNegative, BigDecimal fullNumber) {
+                        _getRepetition = reference;
+                    }
+                });
         npb.show();
     }
 
