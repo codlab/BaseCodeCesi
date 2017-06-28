@@ -13,10 +13,10 @@
         <TextView
             android:id="@+id/commerce"
             android:layout_width="fill_parent"
-            android:layout_height="80px"
+            android:layout_height="45dp"
             android:background="@color/blue"
             android:gravity="center_vertical"
-            android:paddingLeft="25px"
+            android:paddingLeft="16dp"
             android:text="Commerce du Coin"
             android:textColor="@color/white"></TextView>
 
@@ -27,28 +27,28 @@
         android:layout_height="wrap_content"
         android:background="@color/darkgrey"
         android:orientation="vertical"
-        android:paddingTop="30px">
+        android:paddingTop="16dp">
 
         <TextView
             android:id="@+id/adresse"
             android:layout_width="fill_parent"
-            android:layout_height="50px"
+            android:layout_height="16dp"
             android:gravity="center_vertical"
-            android:paddingLeft="25px"
+            android:paddingLeft="16dp"
             android:text="25 rue Trifouilli les oies"
             android:textColor="@color/white"></TextView>
 
         <TextView
             android:id="@+id/ville"
             android:layout_width="fill_parent"
-            android:layout_height="80px"
-            android:paddingLeft="25px"
+            android:layout_height="32dp"
+            android:paddingLeft="16dp"
             android:text="34000 Talence"
             android:textColor="@color/white"></TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Lundi"
                 android:textColor="@color/white"></TextView>
 
@@ -80,7 +80,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -88,7 +88,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Mardi"
                 android:textColor="@color/white"></TextView>
 
@@ -112,7 +112,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -120,7 +120,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Mercredi"
                 android:textColor="@color/white"></TextView>
 
@@ -144,7 +144,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -152,7 +152,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Jeudi"
                 android:textColor="@color/white"></TextView>
 
@@ -176,7 +176,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -184,7 +184,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Vendredi"
                 android:textColor="@color/white"></TextView>
 
@@ -208,7 +208,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -216,7 +216,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Samedi"
                 android:textColor="@color/white"></TextView>
 
@@ -240,7 +240,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50px"
+            android:layout_height="32dp"
             android:orientation="horizontal">
 
             <TextView
@@ -248,7 +248,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:paddingLeft="25px"
+                android:paddingLeft="16dp"
                 android:text="Dimanche"
                 android:textColor="@color/white"></TextView>
 
