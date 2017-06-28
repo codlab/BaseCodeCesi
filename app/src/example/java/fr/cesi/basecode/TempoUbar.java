@@ -15,13 +15,19 @@ public class TempoModel extends BaseModel {
     public long _id;
 
     @Column
-    public int price_min;
+    public char _name_bar;
+    @Column
+    public char _adress_bar;
 
     @Column
-    public int _duration_pause;
+    public int _price-min;
 
     @Column
-    public int _number_repetition;
+    public int _price-max;
+
+    @Column
+    public int _price-may;
+
 
 
     public TempoModel() {
