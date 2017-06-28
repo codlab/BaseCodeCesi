@@ -1,7 +1,6 @@
 package fr.cesi.base.tuto.klass;
 
 import fr.cesi.base.tuto.abstracts.AbstractExercise;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Created by kevinleperf on 22/06/2017.

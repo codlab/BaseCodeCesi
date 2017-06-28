@@ -4,7 +4,6 @@ import org.junit.Assert;
 
 import fr.cesi.base.tuto.abstracts.AbstractExercise;
 import fr.cesi.base.tuto.views.Views;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Created by kevinleperf on 22/06/2017.
