@@ -51,7 +51,8 @@ public class TimerActivity extends AbstractPopableActivity
         if(access_coarce_location != PackageManager.PERMISSION_GRANTED ||
                 access_fine_location != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.READ_CONTACTS},
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION},
                     1337); //here, request callback int to 1337 - used when manage response from call
         } else {
             //here we can manage maps start
