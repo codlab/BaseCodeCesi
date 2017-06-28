@@ -1,4 +1,4 @@
-package fr.cesi;
+package fr.cesi.bar.map;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import fr.cesi.basecode.R;
 
-public class BottomSheet extends AppCompatActivity {
+public class BottomSheetTest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottom_sheet);
+        setContentView(R.layout.view_bottom_sheet);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

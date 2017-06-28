@@ -4,4 +4,5 @@
     <dimen name="splash_margin">50dp</dimen>
     <dimen name="default_padding">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="view_bottom_sheet_height">200dp</dimen>
 </resources>
