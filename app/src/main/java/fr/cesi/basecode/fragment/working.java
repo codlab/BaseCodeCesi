@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,8 @@ public class working extends Fragment implements IPopableFragment {
 
     private TextView _counter;
     private TextView _repetitions;
+    private int _duration_seconds;
+    private int _duration_pause_seconds;
 
 
     public working() {
@@ -70,10 +73,14 @@ public class working extends Fragment implements IPopableFragment {
             _duration = getArguments().getInt(ARG_DURATION);
             _duration_pause = getArguments().getInt(ARG_DURATION_PAUSE);
             _getRepetition = getArguments().getInt(ARG_NUMBER_REPETITION);
+
+            _duration_seconds = _duration;
+            _duration_pause_seconds = _duration_pause;
         }
 
         _duration *= 1000;
         _duration_pause *= 1000;
+
 
         _handler = new Handler();
     }
@@ -103,9 +110,17 @@ public class working extends Fragment implements IPopableFragment {
         main_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(_started == false) {
+                if (_started == false) {
                     _started = true;
+                    _paused = false;
                     init();
+                } else {
+                    if (!_paused) {
+                        _paused = true;
+                    } else {
+                        _paused = false;
+                        postStartLoop();
+                    }
                 }
             }
         });
@@ -135,6 +150,7 @@ public class working extends Fragment implements IPopableFragment {
     private String _current_type;
 
     private boolean _started = false;
+    private boolean _paused = false;
 
 
     private void init() {
@@ -147,8 +163,11 @@ public class working extends Fragment implements IPopableFragment {
         //mettre le fonctionnement
         int remaining_seconds = (int) (remaining_duration / 1000);
 
-        _counter.setText(""+remaining_seconds);
-        if(TYPE_DURATION.equals(_current_type)) {
+        _counter.setText("" + remaining_seconds);
+        _repetitions.setText(remaining_repetition + "/" + _getRepetition);
+
+        Log.d("test", "refreshUI: "+_current_type + " " + remaining_repetition);
+        if (TYPE_DURATION.equals(_current_type)) {
             _start_image.setVisibility(View.VISIBLE);
             _working_progress.setVisibility(View.VISIBLE);
 
@@ -156,7 +175,7 @@ public class working extends Fragment implements IPopableFragment {
             _pause_progress.setVisibility(View.GONE);
 
             _working_progress.setMax(_duration);
-            _working_progress.setProgress(_duration - remaining_seconds);
+            _working_progress.setProgress((float) (_duration - remaining_duration));
         } else {
             _start_image.setVisibility(View.GONE);
             _working_progress.setVisibility(View.GONE);
@@ -165,21 +184,23 @@ public class working extends Fragment implements IPopableFragment {
             _pause_progress.setVisibility(View.VISIBLE);
 
             _pause_progress.setMax(_duration_pause);
-            _pause_progress.setProgress(_duration_pause - remaining_seconds);
+            _pause_progress.setProgress((float) (_duration_pause - remaining_duration));
         }
     }
 
     private void startLoop() {
-        if(remaining_repetition >= 0 && remaining_duration >= 0) {
+        if (remaining_repetition >= 0 && _started) {
             refreshUI();
             remaining_duration -= 50;//ms
 
-            if(remaining_duration <= 0) {
-                if(_current_type == TYPE_DURATION) {
-                    if(remaining_repetition > 0) {
-                        remaining_repetition --;
+            if (remaining_duration <= 0) {
+                if (TYPE_DURATION.equals(_current_type)) {
+                    if (remaining_repetition > 0) {
+                        remaining_repetition--;
                         _current_type = TYPE_DURATION_PAUSE;
                         remaining_duration = _duration_pause;
+                    } else{
+                        _started = false;
                     }
                 } else { //_current_type == TYPE_DURATION_PAUSE
                     _current_type = TYPE_DURATION;
@@ -195,12 +216,14 @@ public class working extends Fragment implements IPopableFragment {
     }
 
     private void postStartLoop() {
-        _handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-               startLoop();
-            }
-        }, 50);
+        if (!_paused) {
+            _handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startLoop();
+                }
+            }, 50);
+        }
     }
 }
 
