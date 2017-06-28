@@ -7,22 +7,60 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import fr.cesi.example.database.DatabaseTempo;
 
-@Table(name = "TempoModel", database = DatabaseTempo.class)
-public class TempoModel extends BaseModel {
+@Table(name = "CommerceModel", database = DatabaseCommerce.class)
+public class CommerceModel extends BaseModel {
 
     @PrimaryKey(autoincrement = true)
     @Column
-    public long _id;
+    public long _id_commerce;
 
     @Column
-    public int _duration_active;
+    public int _longitude;
 
     @Column
-    public int _duration_pause;
+    public int _lattitude;
 
     @Column
-    public int _number_repetition;
+    public int _lundi_ouverture;
 
+    @Column
+    public int _lundi_fermeture;
+
+    @Column
+    public int _mardi_ouverture;
+
+    @Column
+    public int _mardi_fermeture;
+
+    @Column
+    public int _mercredi_ouverture;
+
+    @Column
+    public int _mercredi_fermeture;
+
+    @Column
+    public int _jeudi_ouverture;
+
+    @Column
+    public int _jeudi_fermeture;
+
+    @Column
+    public int _vendredi_ouverture;
+
+    @Column
+    public int _vendredi_fermeture;
+
+    @Column
+    public int _samedi_ouverture;
+
+    @Column
+    public int _samedi_fermeture;
+
+    @Column
+    public int _dimanche_ouverture;
+
+    @Column
+    public int _dimanche_fermeture;
 
     public TempoModel() {
         super();
