@@ -65,10 +65,10 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
 
         ImageView vue = (ImageView) view.findViewById(R.id.poule);
         TextView text = (TextView) view.findViewById(R.id.text);
-        ButtonView button1 = (ButtonView) view.findViewById(R.id.button1);
-        ButtonView button2 = (ButtonView) view.findViewById(R.id.button2);
-        ButtonView button3 = (ButtonView) view.findViewById(R.id.button3);
-        ButtonView button4 = (ButtonView) view.findViewById(R.id.button4);
+        Button button1 = (Button) view.findViewById(R.id.button1);
+        Button button2 = (Button) view.findViewById(R.id.button2);
+        Button button3 = (Button) view.findViewById(R.id.button3);
+        Button button4 = (Button) view.findViewById(R.id.button4);
 
         vue.setImageResource(question.imgQuestion);
         text.setText(question.textQuestion);
@@ -127,6 +127,25 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
                 ((QuestionActivity) getActivity()).showNextQuestion();
             }
         });*/
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setCancelable(true);
+        builder.setTitle("Title");
+        builder.setMessage("Message");
+        builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override
