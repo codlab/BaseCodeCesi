@@ -9,12 +9,21 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.basecode"
+        applicationId "fr.cesi.android.codefarm"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file("C:\\Users\\sebri\\Desktop\\cesi.jks")
+            storePassword "Derec376"
+            keyAlias "mon_application"
+            keyPassword "Derec376"
+            v2SigningEnabled false
+        }
     }
     buildTypes {
         release {
@@ -24,10 +33,11 @@ android {
     }
     productFlavors {
         main {
-
+            signingConfig signingConfigs.release
         }
 
         example {
+            signingConfig signingConfigs.release
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }
