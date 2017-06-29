@@ -16,6 +16,17 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file("D:\\HDD\\Mes-documents\\CESI\\Android\\Code_Farm.jks")
+            storePassword "lespaul96"
+            keyAlias "code_farm"
+            keyPassword "lespaul96"
+            v2SigningEnabled false
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,10 +35,11 @@ android {
     }
     productFlavors {
         main {
-
+            signingConfig signingConfigs.release
         }
 
         example {
+            signingConfig signingConfigs.release
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }
