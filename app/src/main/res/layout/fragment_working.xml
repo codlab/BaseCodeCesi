@@ -60,6 +60,7 @@
             custom:donut_unfinished_color="@color/colorUnfinished"
             custom:donut_unfinished_stroke_width="20dp" />
 
+
         <ImageView
             android:id="@+id/main_btn"
             android:layout_width="100dp"
@@ -79,18 +80,19 @@
             custom:donut_finished_color="@color/colorOnPause"
             custom:donut_finished_stroke_width="20dp"
             custom:donut_unfinished_color="@color/colorUnfinished"
-            custom:donut_unfinished_stroke_width="20dp" />
+            custom:donut_unfinished_stroke_width="20dp"
+            custom:donut_text_color="@color/colorPrimary"/>
 
 
         <ImageView
-            android:id="@+id/stop_btn"
+            android:id="@+id/start_btn"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/stop" />
 
         <ImageView
-            android:id="@+id/start_btn"
+            android:id="@+id/stop_btn"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -99,23 +101,7 @@
     </FrameLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="right">
 
-        <Button
-            android:id="@+id/reset_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="@dimen/margin_buttons_choice_timer"
-            android:layout_marginRight="60dp"
-            android:background="@drawable/resetbutton"
-            android:text="@string/reinitialiser"
-            android:textColor="@color/colorUnfinished"
-            android:textSize="10sp" />
-
-    </LinearLayout>
 
 
 </LinearLayout>
