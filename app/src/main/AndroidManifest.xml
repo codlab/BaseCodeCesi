@@ -38,9 +38,8 @@
 
         <activity
             android:name="ui.maps.MapsActivity"
-            android:label="@string/title_activity_maps">
-
-        </activity>
+            android:label="@string/title_activity_maps"></activity>
+        <activity android:name="fr.cesi.base.Formulaire"></activity>
     </application>
 
 </manifest>

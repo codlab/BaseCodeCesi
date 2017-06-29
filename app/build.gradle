@@ -9,13 +9,24 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.basecode"
+        applicationId "fr.cesi.ta_faim"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file("../cesi.jks")
+            storePassword "tagada"
+            keyAlias "ta_faim"
+            keyPassword "tagada"
+            v2SigningEnabled false
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,10 +35,11 @@ android {
     }
     productFlavors {
         main {
-            applicationId "fr.cesi.tasfaim"
+            signingConfig signingConfigs.release
         }
 
         example {
+            signingConfig signingConfigs.release
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }
