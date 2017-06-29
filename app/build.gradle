@@ -18,7 +18,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("Users/Pauly Jenkins/Desktop/CESI/Projet Android/UBar.jks")
+            storeFile file("../UBar.jks")
             storePassword "GREGORY.928993"
             keyAlias "u_bar"
             keyPassword "GREGORY.928993"
