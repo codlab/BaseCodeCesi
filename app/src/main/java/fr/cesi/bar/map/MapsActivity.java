@@ -106,7 +106,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void onMarkerClickListener(Marker marker) {
         mBottomSheetLayout.showWithSheetView(mBottomSheet);
-        mBarName.setText(mMap.getTitle());
+        mBarName.setText("");
 
         }
 }
