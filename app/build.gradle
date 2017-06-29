@@ -9,18 +9,22 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.basecode"
+        applicationId "fr.cesi.ubar"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-signingconfig{
-    release{
-
+    signingConfigs {
+        release {
+            storeFile file("../UBar.jks")
+            storePassword "GREGORY.928993"
+            keyAlias "u_bar"
+            keyPassword "GREGORY.928993"
+            v2SigningEnabled false
+        }
     }
-}
 
     buildTypes {
         release {
@@ -30,10 +34,11 @@ signingconfig{
     }
     productFlavors {
         main {
-
+            signingConfig signingConfigs.release
         }
 
         example {
+            signingConfig signingConfigs.release
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }
