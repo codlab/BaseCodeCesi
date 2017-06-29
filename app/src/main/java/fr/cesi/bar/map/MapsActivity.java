@@ -99,9 +99,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-        mMap.addMarker(new MarkerOptions()
+        Marker marker = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(44.838578, -0.581482))
-                .title("Connemara Irish Pub"));
+                .title("Connemara Irish Pub")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.appmark))
+        );
+
     }
 
     private void onMarkerClickListener(Marker marker) {

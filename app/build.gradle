@@ -9,7 +9,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.basecode"
+        applicationId "fr.cesi.ubar"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
