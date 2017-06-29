@@ -33,6 +33,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="fr.cesi.bar.form.UserFormActivity">
+
+        </activity>
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

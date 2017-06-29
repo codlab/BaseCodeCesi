@@ -22,8 +22,8 @@ public class BarController extends AbstractModelController<Bar> {
         return Bar.class;
     }
 
-    public Bar createBar(String bar_name, double longitude, double latitude, int price_min,
-                         int price_max) {
+    public Bar createBar(String bar_name, double longitude, double latitude, String price_min,
+                         String price_max) {
         Bar instance = new Bar(
                 bar_name,
                 longitude,
