@@ -76,14 +76,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="80dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         >
 
         <Button
             android:id="@+id/button1"
             android:layout_width="170dp"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:background="#3ec33e"
             android:text="rep 1"
             android:textColor="#000" />
@@ -105,14 +105,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="12dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         >
 
         <Button
             android:id="@+id/button3"
             android:layout_width="170dp"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:background="#3ec33e"
             android:text="rep 3"
             android:textColor="#000" />
