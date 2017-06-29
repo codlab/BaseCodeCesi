@@ -18,7 +18,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("C:\\aaa\\CodeFarm.jks")
+            storeFile file("../CodeFarm.jks")
             storePassword "azerty666"
             keyAlias "CodeFarm"
             keyPassword "azerty666"
