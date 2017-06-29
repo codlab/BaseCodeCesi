@@ -28,6 +28,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.HashMap;
+import java.util.List;
+
+import fr.cesi.base.database.Bar;
+import fr.cesi.base.database.BarController;
 import fr.cesi.basecode.R;
 
 import static fr.cesi.basecode.R.id.title;
@@ -39,20 +44,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private TextView mBarName;
 
+    List<Bar> mBars;
+    HashMap<Marker, Bar> mMarkerBars = new HashMap<>();
+    private GoogleMap mMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
+        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottom_sheet);
 
         mBottomSheet = LayoutInflater.from(this)
                 .inflate(R.layout.view_bottom_sheet, mBottomSheetLayout, false);
 
         mBarName = (TextView) mBottomSheet.findViewById(R.id.bar_name);
     }
-
-
 
 
     @Override
@@ -76,12 +83,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .findFragmentById(R.id.map);
 
             mapFragment.getMapAsync(this);
+
+            init();
         }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        GoogleMap mMap = googleMap;
+        mMap = googleMap;
+
+        init();
+
         mMap.setMyLocationEnabled(true);
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -99,7 +111,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-        Marker marker = mMap.addMarker(new MarkerOptions()
+        mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(44.838578, -0.581482))
                 .title("Connemara Irish Pub")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.appmark))
@@ -108,8 +120,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void onMarkerClickListener(Marker marker) {
-        mBottomSheetLayout.showWithSheetView(mBottomSheet);
-        mBarName.setText("");
 
+        Bar bar = mMarkerBars.get(marker);
+        mBarName.setText(bar._bar_name);
+
+        mBottomSheetLayout.showWithSheetView(mBottomSheet);
+    }
+
+    private void init() {
+        if (mMap != null) {
+            mMap.clear();
+            mMarkerBars.clear();
+
+            mBars = BarController.getInstance().listAll();
+
+            for (Bar bar : mBars) {
+                Marker new_marker_added = mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(bar._latitude, bar._longitude))
+                        .title(bar._bar_name));
+                mMarkerBars.put(new_marker_added, bar);
+            }
         }
+    }
 }

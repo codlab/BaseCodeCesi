@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Cette classe permet d'instancier simplement des "provider" de gestionnaire de modeles
  *
  * Exemple avec les Tempo :
- * TempoModelController controller = DatabaseControllerProvider.getController(TempoModelController.class);
+ * BarController controller = DatabaseControllerProvider.getController(BarController.class);
  *
  * List<TempoModel> tempo_list = controller.listAll();
  */
