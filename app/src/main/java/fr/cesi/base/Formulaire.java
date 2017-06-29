@@ -3,7 +3,7 @@ package fr.cesi.base;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import fr.cesi.basecode.example.R;
+import fr.cesi.basecode.R;
 
 public class Formulaire extends AppCompatActivity {
 
