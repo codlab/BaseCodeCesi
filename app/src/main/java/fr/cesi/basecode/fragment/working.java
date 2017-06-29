@@ -125,8 +125,6 @@ public class working extends Fragment implements IPopableFragment {
                 }
             }
         });
-
-
     }
 
     @Override
@@ -196,7 +194,7 @@ public class working extends Fragment implements IPopableFragment {
 
             if (remaining_duration <= 0) {
                 if (TYPE_DURATION.equals(_current_type)) {
-                    if (remaining_repetition > 0) {
+                    if (remaining_repetition > 1) {
                         remaining_repetition--;
                         _current_type = TYPE_DURATION_PAUSE;
                         remaining_duration = _duration_pause;

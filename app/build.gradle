@@ -9,7 +9,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.basecode"
+        applicationId "fr.cesi.training_timer_AP"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
@@ -22,12 +22,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("D:/Documents/formation_developpeur/application/Training_Timer_doc/cle.jks")
+            storePassword "anthony010780"
+            keyAlias "key0"
+            keyPassword "anthony010780"
+            v2SigningEnabled false
+        }
+    }
+
     productFlavors {
         main {
-
+            signingConfig signingConfigs.release
         }
 
         example {
+            signingConfig signingConfigs.release
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }

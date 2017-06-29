@@ -57,7 +57,6 @@
             android:layout_marginTop="20dp"
             custom:donut_finished_color="@color/colorWorking"
             custom:donut_finished_stroke_width="20dp"
-            custom:donut_progress="100"
             custom:donut_unfinished_color="@color/colorUnfinished"
             custom:donut_unfinished_stroke_width="20dp" />
 
@@ -79,7 +78,6 @@
             android:layout_marginTop="20dp"
             custom:donut_finished_color="@color/colorOnPause"
             custom:donut_finished_stroke_width="20dp"
-            custom:donut_progress="100"
             custom:donut_unfinished_color="@color/colorUnfinished"
             custom:donut_unfinished_stroke_width="20dp" />
 
