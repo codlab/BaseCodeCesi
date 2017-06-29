@@ -19,9 +19,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../UBar.jks")
-            storePassword "GREGORY.928993"
+            storePassword "1234"
             keyAlias "u_bar"
-            keyPassword "GREGORY.928993"
+            keyPassword "1234"
             v2SigningEnabled false
         }
     }
