@@ -18,35 +18,20 @@
         android:hint="Nom du bar"
         android:textSize="22dp" />
 
-    <EditText
-        android:id="@+id/adresse"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="Adress du bar"
-        android:textSize="22dp" />
 
     <EditText
         android:id="@+id/prixmax"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:hint="Prix-Max"
+        android:hint="Prix Normal"
         android:textSize="22dp" />
 
     <EditText
         android:id="@+id/prixmin"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:hint="Prix-Min"
+        android:hint="Prix Happy Hour"
         android:textSize="22dp" />
-
-    <EditText
-
-        android:id="@+id/prixmoy"
-        android:layout_width="246dp"
-        android:layout_height="wrap_content"
-        android:hint="Prix-Moyen"
-        android:textSize="22dp" />
-
 
     <Button
         android:id="@+id/button"
