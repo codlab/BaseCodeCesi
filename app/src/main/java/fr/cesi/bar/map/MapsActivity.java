@@ -30,6 +30,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import fr.cesi.basecode.R;
 
+import static fr.cesi.basecode.R.id.title;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private View mBottomSheet;
@@ -45,29 +47,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
 
         mBottomSheet = LayoutInflater.from(this)
-        .inflate(R.layout.view_bottom_sheet, mBottomSheetLayout, false);
+                .inflate(R.layout.view_bottom_sheet, mBottomSheetLayout, false);
 
         mBarName = (TextView) mBottomSheet.findViewById(R.id.bar_name);
-
-
-        //
-        // Button button1 = (Button) findViewById( R.id.button_1 );
-        //button1.setOnClickListener(this);
-        //mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        View bottomSheet = findViewById( R.id.bottom_sheet );
-//        Button button1 = (Button) findViewById( R.id.button_1 );
-//
-//        button1.setOnClickListener(this);
-//
-//        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-//    }
+
 
 
     @Override
@@ -98,6 +83,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         GoogleMap mMap = googleMap;
         mMap.setMyLocationEnabled(true);
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -123,8 +109,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void onMarkerClickListener(Marker marker) {
         mBottomSheetLayout.showWithSheetView(mBottomSheet);
+        mBarName.setText("");
 
-        mBarName.setText("...");
-    }
-
+        }
 }

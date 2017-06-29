@@ -16,16 +16,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
-    singingConfigs {
+    signingConfigs {
         release {
-            storeFile file("/Users/domin/ubar/ubar.jks")
-            storePassword "Anything2311"
-            keyAlias "mon_app"
-            keyPassword "Anything2311"
+            storeFile file("Users/Pauly Jenkins/Desktop/CESI/Projet Android/UBar.jks")
+            storePassword "GREGORY.928993"
+            keyAlias "u_bar"
+            keyPassword "GREGORY.928993"
             v2SigningEnabled false
         }
     }
+
     buildTypes {
         release {
             minifyEnabled false
