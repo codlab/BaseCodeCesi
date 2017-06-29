@@ -19,15 +19,15 @@ public class Bar extends BaseModel {
 
     @Column
     public double _latitude;
-    @Column
 
+    @Column
     public double _longitude;
-    @Column
-
-    public int _price_min;
 
     @Column
-    public int _price_max;
+    public String _price_min;
+
+    @Column
+    public String _price_max;
 
 
 
@@ -37,7 +37,7 @@ public class Bar extends BaseModel {
         super();
     }
 
-    public Bar(String bar_name, double latitude, double longitude, int price_min,  int price_max) {
+    public Bar(String bar_name, double latitude, double longitude, String price_min,  String price_max) {
         this();
 
         _bar_name = bar_name;
@@ -49,11 +49,11 @@ public class Bar extends BaseModel {
     public String get_bar_name() {
         return _bar_name;
     }
-    public int get_price_min() {
+    public String get_price_min() {
         return _price_min;
     }
 
-    public int get_price_max() {
+    public String get_price_max() {
         return _price_max;
     }
 
