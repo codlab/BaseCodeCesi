@@ -118,23 +118,34 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
             // text si gagné
             builder.setTitle(getString(R.string.result_title1));
             builder.setMessage(getString(R.string.result_success));
+
+
+            DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //ICI > METTRE DANS LE CALLBACK DE LA POPUP
+                    ((QuestionActivity) getActivity()).showNextQuestion();
+                }
+            };
+
+            builder.setPositiveButton("Confirm",
+                    on_click);
+
         } else {
             // texte si perdu
             builder.setTitle(getString(R.string.result_title2));
             builder.setMessage(getString(R.string.result_failed));
+
+            DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //ICI > METTRE DANS LE CALLBACK DE LA POPUP
+                    ((QuestionActivity) getActivity()).showNextQuestion();
+                }
+            };
+
+            builder.setNegativeButton(android.R.string.cancel, on_click);
         }
-
-        DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //ICI > METTRE DANS LE CALLBACK DE LA POPUP
-                ((QuestionActivity) getActivity()).showNextQuestion();
-            }
-        };
-
-        builder.setPositiveButton("Confirm",
-                on_click);
-        builder.setNegativeButton(android.R.string.cancel, on_click);
 
         builder.show();
 
