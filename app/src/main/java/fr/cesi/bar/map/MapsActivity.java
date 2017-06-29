@@ -27,8 +27,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.raizlabs.android.dbflow.config.FlowManager;
-
+import com.raizlabs.android.dbflow.co
 import java.util.HashMap;
 import java.util.List;
 
@@ -51,11 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        FlowManager.init(this);
-
-        mBars = BarController.getInstance().listAll();
-
-        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottom_sheet);
+        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
 
         mBottomSheet = LayoutInflater.from(this)
         .inflate(R.layout.view_bottom_sheet, mBottomSheetLayout, false);
@@ -126,18 +121,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-
-        for (Bar bar :
-                mBars) {
-            Marker new_marker_added = mMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(44.838578, -0.581482))
-                    .title("Connemara Irish Pub"));
-            mMarkerBars.put(new_marker_added, bar);
-        }
-
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(44.838578, -0.581482))
-                .title("Connemara Irish Pub"));
+                .title("Connemara Irish Pub")
+                .icon(BitmapDescriptor.fromResource(R.drawable.appmark))
+        );
+
     }
 
     private void onMarkerClickListener(Marker marker) {
@@ -147,5 +136,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mBarName.setText("...");
     }
-//faut mettre la regle pour binder les info sur la map
+
 }
