@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fr.cesi.base.Formulaire">
+    android:background="#173D76"
+    tools:context="fr.cesi.base.FormulaireActivity">
 
 
     <LinearLayout
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:paddingTop="50dp"
+            android:textColor="#FFFFFF"
             android:text="Nom commerce" />
 
         <EditText
@@ -43,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
             android:text="Adresse" />
 
         <EditText
@@ -66,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:paddingTop="10dp"
+            android:textColor="#FFFFFF"
             android:text="Ouverture horaire" />
     </LinearLayout>
 
@@ -76,31 +80,38 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Lundi" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
 
         <EditText
             android:id="@+id/editText5"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
 
@@ -111,30 +122,37 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Mardi" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
 
@@ -145,30 +163,37 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Mercredi" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
 
@@ -179,30 +204,37 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Jeudi" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
 
@@ -213,30 +245,37 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Vendredi" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
 
@@ -247,32 +286,38 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Samedi" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
 
         <EditText
             android:id="@+id/editText4"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
 
@@ -283,34 +328,46 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="40"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FFFFFF"
             android:text="Dimanche" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:id="@+id/dimanche_open"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
+            android:layout_weight="30"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="AM"
+            android:gravity="center"
             android:inputType="text" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:id="@+id/dimanche_close"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_weight="30"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="PM"
+            android:gravity="center"
             android:inputType="text" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create"
+        android:text="@string/validate"/>
 
 
 </LinearLayout>

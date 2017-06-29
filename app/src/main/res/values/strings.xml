@@ -2,4 +2,5 @@
     <string name="app_name">BaseCode</string>
     <string name="hello_blank_fragment">hello</string>
     <string name="title_activity_maps">Map</string>
+    <string name="validate">Valider</string>
 </resources>
