@@ -19,7 +19,7 @@ public class CommerceController extends AbstractModelController<CommerceModel> {
         return CommerceModel.class;
     }
 
-    public CommerceModel createCommerce(String nom, double latitude, double longitude, int lundi_ouverture, int lundi_fermeture, int mardi_ouverture, int mardi_fermeture, int mercredi_ouverture, int mercredi_fermeture, int jeudi_ouverture, int jeudi_fermeture, int vendredi_ouverture, int vendredi_fermeture, int samedi_ouverture, int samedi_fermeture, int dimanche_ouverture, int dimanche_fermeture) {
+    public CommerceModel createCommerce(String nom, double latitude, double longitude, String lundi_ouverture, String lundi_fermeture, String mardi_ouverture, String mardi_fermeture, String mercredi_ouverture, String mercredi_fermeture, String jeudi_ouverture, String jeudi_fermeture, String vendredi_ouverture, String vendredi_fermeture, String samedi_ouverture, String samedi_fermeture, String dimanche_ouverture, String dimanche_fermeture) {
         CommerceModel instance = new CommerceModel(nom, latitude,
         longitude,
         lundi_ouverture,

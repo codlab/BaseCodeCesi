@@ -24,6 +24,7 @@
             android:text="Nom commerce" />
 
         <EditText
+            android:id="@+id/nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -34,7 +35,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -56,7 +57,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/rounded_edittext"
             android:inputType="text" />
-    </LinearLayout>
+    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,6 +91,7 @@
             android:text="Lundi" />
 
         <EditText
+            android:id="@+id/lundi_open"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -102,7 +104,7 @@
 
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/lundi_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -132,6 +134,7 @@
             android:text="Mardi" />
 
         <EditText
+            android:id="@+id/mardi_open"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -144,6 +147,7 @@
 
 
         <EditText
+            android:id="@+id/mardi_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -173,6 +177,7 @@
             android:text="Mercredi" />
 
         <EditText
+            android:id="@+id/mercredi_open"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -185,6 +190,7 @@
 
 
         <EditText
+            android:id="@+id/mercredi_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -214,6 +220,7 @@
             android:text="Jeudi" />
 
         <EditText
+            android:id="@+id/jeudi_open"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -226,6 +233,7 @@
 
 
         <EditText
+            android:id="@+id/jeudi_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -255,6 +263,7 @@
             android:text="Vendredi" />
 
         <EditText
+            android:id="@+id/vendredi_open"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -267,6 +276,7 @@
 
 
         <EditText
+            android:id="@+id/vendredi_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -296,6 +306,7 @@
             android:text="Samedi" />
 
         <EditText
+            android:id="@+id/samedi_open"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -308,7 +319,7 @@
 
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/samedi_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
