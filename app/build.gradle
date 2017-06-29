@@ -9,7 +9,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.android.codefarm"
+        applicationId "fr.cesi.basecode"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
@@ -18,10 +18,10 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("C:\\Users\\sebri\\Desktop\\cesi.jks")
-            storePassword "Derec376"
-            keyAlias "mon_application"
-            keyPassword "Derec376"
+            storeFile file("C:\\aaa\\CodeFarm.jks")
+            storePassword "azerty666"
+            keyAlias "CodeFarm"
+            keyPassword "azerty666"
             v2SigningEnabled false
         }
     }
