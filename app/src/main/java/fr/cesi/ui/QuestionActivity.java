@@ -47,7 +47,7 @@ public class QuestionActivity extends AbstractPopableActivity
             QuestionFragment fragment = QuestionFragment.newInstance(question);
             getStackController().push(fragment);
         } else {
-            //show finish ! ... fragment
+            finish();
         }
     }
 
