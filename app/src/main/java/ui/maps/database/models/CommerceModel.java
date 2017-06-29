@@ -16,10 +16,13 @@ public class CommerceModel extends BaseModel {
     public long _id_commerce;
 
     @Column
-    public int _longitude;
+    public String _nom;
 
     @Column
-    public int _lattitude;
+    public double _longitude;
+
+    @Column
+    public double _lattitude;
 
     @Column
     public int _lundi_ouverture;
@@ -66,6 +69,7 @@ public class CommerceModel extends BaseModel {
     public CommerceModel() {
         super();
 
+        _nom = "";
         _id_commerce = 0;
         _longitude = 0;
         _lattitude = 0;
@@ -85,9 +89,25 @@ public class CommerceModel extends BaseModel {
         _dimanche_fermeture = 0;
     }
 
-    public CommerceModel(int duration_active, int duration_pause, int number_repetition) {
+    public CommerceModel(String nom, double latitude, double longitude, int lundi_ouverture, int lundi_fermeture, int mardi_ouverture, int mardi_fermeture, int mercredi_ouverture, int mercredi_fermeture, int jeudi_ouverture, int jeudi_fermeture, int vendredi_ouverture, int vendredi_fermeture, int samedi_ouverture, int samedi_fermeture, int dimanche_ouverture, int dimanche_fermeture) {
         this();
+        _nom = nom;
+        _lattitude = latitude;
+        _longitude = longitude;
+        _lundi_ouverture = lundi_ouverture;
+        _lundi_fermeture = lundi_fermeture;
+        _mardi_ouverture = mardi_ouverture;
+        _mardi_fermeture = mardi_fermeture;
+        _mercredi_ouverture = mercredi_ouverture;
+        _mercredi_fermeture = mercredi_fermeture;
+        _jeudi_ouverture = jeudi_ouverture;
+        _jeudi_fermeture = jeudi_fermeture;
+        _vendredi_ouverture = vendredi_ouverture;
+        _vendredi_fermeture = vendredi_fermeture;
+        _samedi_ouverture = samedi_ouverture;
+        _samedi_fermeture = samedi_fermeture;
+        _dimanche_ouverture = dimanche_ouverture;
+        _dimanche_fermeture = dimanche_fermeture;
     }
-
 }
 

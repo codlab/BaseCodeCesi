@@ -1,8 +1,12 @@
 package ui.maps;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -16,17 +20,22 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.raizlabs.android.dbflow.config.FlowManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import fr.cesi.basecode.R;
+import ui.maps.database.controllers.CommerceController;
+import ui.maps.database.models.CommerceModel;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private BottomSheetLayout mBottomSheetLayout;
     private View mBottomSheet;
-    private ArrayList<Marker> _my_markers;
+    private List<CommerceModel> _my_markers;
+    private HashMap<Marker, CommerceModel> _markers_to_models = new HashMap<>();
 
     private GoogleMap mMap;
 
@@ -35,11 +44,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        FlowManager.init(this);
+
         _my_markers = new ArrayList<>();
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
         mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
 
@@ -48,6 +55,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .inflate(R.layout.info_commerce, mBottomSheetLayout, false);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        int access_fine_location = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        int access_coarce_location = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if(access_coarce_location != PackageManager.PERMISSION_GRANTED ||
+                access_fine_location != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION},
+                    1337); //here, request callback int to 1337 - used when manage response from call
+        } else {
+            //here we can manage maps start
+            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+
+            init();
+        }
+    }
 
     /**
      * Manipulates the map once available.
@@ -61,6 +93,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        init();
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setMyLocationEnabled(true);
 
@@ -79,7 +113,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                addMarker(latLng, "in bdx with click", mMap);
+                //addMarker(latLng, "in bdx with click", mMap);
+                //truc
             }
         });
 
@@ -98,20 +133,46 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    private void addMarker(LatLng latLng, String title, GoogleMap map) {
-        Marker marker = map.addMarker(new MarkerOptions().position(latLng).title(title));
-        _my_markers.add(marker);
-    }
-
     private void showInformation(Marker marker) {
-        TextView lundi_ouverture = (TextView) mBottomSheet.findViewById(R.id.lundi_ouverture);
 
-        lundi_ouverture.setText();
-        mBottomSheetLayout.showWithSheetView(mBottomSheet);
+        CommerceModel model = _markers_to_models.get(marker);
+
+        if(model != null) {
+            TextView name = (TextView) mBottomSheet.findViewById(R.id.commerce);
+            TextView lundi_ouverture = (TextView) mBottomSheet.findViewById(R.id.lundi_ouverture);
+            TextView lundi_fermeture = (TextView) mBottomSheet.findViewById(R.id.lundi_fermeture);
+            TextView mardi_ouverture = (TextView) mBottomSheet.findViewById(R.id.mardi_ouverture);
+            TextView mardi_fermeture = (TextView) mBottomSheet.findViewById(R.id.mardi_fermeture);
+
+            name.setText(model._nom);
+            lundi_ouverture.setText(model._lundi_ouverture);
+            lundi_fermeture.setText(model._lundi_fermeture);
+            mardi_ouverture.setText(model._mardi_ouverture);
+            mardi_fermeture.setText(model._mardi_fermeture);
+            mBottomSheetLayout.showWithSheetView(mBottomSheet);
+        }
     }
 
     private void deleteMarker(Marker marker) {
         marker.remove();
         _my_markers.remove(marker);
+    }
+
+    private void init() {
+        if(mMap != null) {
+            mMap.clear();
+            _markers_to_models.clear();
+
+            _my_markers = CommerceController.getInstance().listAll();
+
+
+            for (CommerceModel model : _my_markers) {
+                LatLng NEW = new LatLng(model._lattitude, model._longitude);
+                Marker marker = mMap.addMarker(new MarkerOptions().position(NEW).title(model._nom));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(NEW));
+
+                _markers_to_models.put(marker, model);
+            }
+        }
     }
 }
