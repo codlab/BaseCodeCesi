@@ -74,7 +74,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="428dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="80dp"
         >
 
         <Button
@@ -102,7 +103,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="498dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="12dp"
         >
 
         <Button
