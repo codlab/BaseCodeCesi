@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="1/5"
+            android:text="prêt?"
             android:textColor="@color/white"
             android:textSize="@dimen/textrepetition" />
 

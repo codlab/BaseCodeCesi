@@ -164,7 +164,7 @@ public class working extends Fragment implements IPopableFragment {
         int remaining_seconds = (int) (remaining_duration / 1000);
 
         _counter.setText("" + remaining_seconds);
-        _repetitions.setText((_repetition - remaining_repetition) + "/" + _repetition);
+        _repetitions.setText((_repetition - remaining_repetition + 1) + "/" + _repetition);
 
         if (TYPE_DURATION.equals(_current_type)) {
             _start_image.setVisibility(View.VISIBLE);
@@ -194,16 +194,20 @@ public class working extends Fragment implements IPopableFragment {
 
             if (remaining_duration <= 0) {
                 if (TYPE_DURATION.equals(_current_type)) {
-                    if (remaining_repetition > 1) {
-                        remaining_repetition--;
+                        if (remaining_repetition>1) {
                         _current_type = TYPE_DURATION_PAUSE;
                         remaining_duration = _duration_pause;
-                    } else{
+                        } else {
+                            _started = false;
+                        }
+                } else { //_current_type == TYPE_DURATION_PAUSE
+                    if (remaining_repetition > 1) {
+                        remaining_repetition--;
+                        _current_type = TYPE_DURATION;
+                        remaining_duration = _duration;
+                    } else {
                         _started = false;
                     }
-                } else { //_current_type == TYPE_DURATION_PAUSE
-                    _current_type = TYPE_DURATION;
-                    remaining_duration = _duration;
                 }
             }
 
