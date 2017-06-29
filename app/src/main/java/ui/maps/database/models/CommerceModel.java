@@ -5,7 +5,8 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
-import fr.cesi.example.database.DatabaseTempo;
+import ui.maps.database.DatabaseCommerce;
+
 
 @Table(name = "CommerceModel", database = DatabaseCommerce.class)
 public class CommerceModel extends BaseModel {
@@ -86,22 +87,6 @@ public class CommerceModel extends BaseModel {
 
     public CommerceModel(int duration_active, int duration_pause, int number_repetition) {
         this();
-
-        _duration_active = duration_active;
-        _duration_pause = duration_pause;
-        _number_repetition = number_repetition;
-    }
-
-    public int getActiveDuration() {
-        return _duration_active;
-    }
-
-    public int getPauseDuration() {
-        return _duration_pause;
-    }
-
-    public int getNumberRepetition() {
-        return _number_repetition;
     }
 
 }

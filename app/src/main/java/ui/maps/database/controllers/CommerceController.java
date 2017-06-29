@@ -4,24 +4,23 @@ import com.raizlabs.android.dbflow.sql.language.property.Property;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import fr.cesi.base.database.AbstractModelController;
-import fr.cesi.example.database.models.TempoModel;
-import fr.cesi.example.database.models.TempoModel_Table;
+import ui.maps.database.models.CommerceModel;
 
 
-public class TempoModelController extends AbstractModelController<TempoModel> {
+public class CommerceController extends AbstractModelController<CommerceModel> {
 
     @Override
     protected Property getColumnId() {
-        return TempoModel_Table._id;
+        return null;//TempoModel_Table._id;
     }
 
     @Override
     protected Class<? extends BaseModel> getTableClass() {
-        return TempoModel.class;
+        return CommerceModel.class;
     }
 
-    public TempoModel createTempo(int duration_active, int duration_pause, int number_repetition) {
-        TempoModel instance = new TempoModel(duration_active,
+    public CommerceModel createTempo(int duration_active, int duration_pause, int number_repetition) {
+        CommerceModel instance = new CommerceModel(duration_active,
                 duration_pause,
                 number_repetition);
 
