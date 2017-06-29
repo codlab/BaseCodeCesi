@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import fr.cesi.base.FormulaireActivity;
 import fr.cesi.basecode.R;
 import ui.maps.database.controllers.CommerceController;
 import ui.maps.database.models.CommerceModel;
@@ -98,23 +99,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setMyLocationEnabled(true);
 
-        //1st marker
-        LatLng Bordeaux = new LatLng(44.841496, -0.570035);
-        mMap.addMarker(new MarkerOptions().position(Bordeaux).title("Marker in bdx"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(Bordeaux));
 
-
-        //2st marker
-        LatLng NEW = new LatLng(64.841496, -4.570035);
-        mMap.addMarker(new MarkerOptions().position(NEW).title("Marker in bdx"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(NEW));
 
         //click
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                //addMarker(latLng, "in bdx with click", mMap);
-                //truc
+                FormulaireActivity.startFormulaireActivity(MapsActivity.this,
+                        latLng);
             }
         });
 
@@ -143,12 +135,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             TextView lundi_fermeture = (TextView) mBottomSheet.findViewById(R.id.lundi_fermeture);
             TextView mardi_ouverture = (TextView) mBottomSheet.findViewById(R.id.mardi_ouverture);
             TextView mardi_fermeture = (TextView) mBottomSheet.findViewById(R.id.mardi_fermeture);
+            TextView mercredi_ouverture = (TextView) mBottomSheet.findViewById(R.id.mercredi_ouverture);
+            TextView mercredi_fermeture = (TextView) mBottomSheet.findViewById(R.id.mercredi_fermeture);
+            TextView jeudi_ouverture = (TextView) mBottomSheet.findViewById(R.id.jeudi_ouverture);
+            TextView jeudi_fermeture = (TextView) mBottomSheet.findViewById(R.id.jeudi_fermeture);
+            TextView vendredi_ouverture = (TextView) mBottomSheet.findViewById(R.id.vendredi_ouverture);
+            TextView vendredi_fermeture = (TextView) mBottomSheet.findViewById(R.id.vendredi_fermeture);
+            TextView samedi_ouverture = (TextView) mBottomSheet.findViewById(R.id.samedi_ouverture);
+            TextView samedi_fermeture = (TextView) mBottomSheet.findViewById(R.id.samedi_fermeture);
+            TextView dimanche_ouverture = (TextView) mBottomSheet.findViewById(R.id.dimanche_ouverture);
+            TextView dimanche_fermeture = (TextView) mBottomSheet.findViewById(R.id.dimanche_fermeture);
 
             name.setText(model._nom);
             lundi_ouverture.setText(model._lundi_ouverture);
             lundi_fermeture.setText(model._lundi_fermeture);
             mardi_ouverture.setText(model._mardi_ouverture);
             mardi_fermeture.setText(model._mardi_fermeture);
+            mercredi_ouverture.setText(model._mercredi_ouverture);
+            mercredi_fermeture.setText(model._mercredi_fermeture);
+            jeudi_ouverture.setText(model._jeudi_ouverture);
+            jeudi_fermeture.setText(model._jeudi_fermeture);
+            vendredi_ouverture.setText(model._vendredi_ouverture);
+            vendredi_fermeture.setText(model._vendredi_fermeture);
+            samedi_ouverture.setText(model._samedi_ouverture);
+            samedi_fermeture.setText(model._samedi_fermeture);
+            dimanche_ouverture.setText(model._dimanche_ouverture);
+            dimanche_fermeture.setText(model._dimanche_fermeture);
             mBottomSheetLayout.showWithSheetView(mBottomSheet);
         }
     }
