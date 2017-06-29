@@ -7,11 +7,7 @@
     tools:context="UI.Map_detail.Map_detail">
 
 
-    <TextView
-        android:layout_width="342dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:text="@string/welcome"></TextView>
+
 
 
 
