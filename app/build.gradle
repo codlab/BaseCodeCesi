@@ -18,10 +18,10 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("../UBar.jks")
-            storePassword "1234"
+            storeFile file("../UBar2.jks")
+            storePassword "123456"
             keyAlias "u_bar"
-            keyPassword "1234"
+            keyPassword "123456"
             v2SigningEnabled false
         }
     }
