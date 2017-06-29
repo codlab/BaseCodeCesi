@@ -24,7 +24,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("D:/Documents/formation_developpeur/application/Training_Timer_doc/cle.jks")
+            storeFile file("../cle.jks")
             storePassword "anthony010780"
             keyAlias "key0"
             keyPassword "anthony010780"
