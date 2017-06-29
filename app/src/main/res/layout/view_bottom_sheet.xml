@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignBaseline="@id/bottomsheet"
-    android:layout_gravity="bottom"
-    android:orientation="vertical">
+    android:layout_height="200dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#334455">
 
     <Button
         android:id="@+id/button_go_maps"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/" />
+            tools:text="Un nom de bar" />
 
         <LinearLayout
             android:layout_width="match_parent"
