@@ -116,7 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Marker marker = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(44.838578, -0.581482))
                 .title("Connemara Irish Pub")
-                .icon(BitmapDescriptor.fromResource(R.drawable.appmark))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.appmark))
         );
 
     }
