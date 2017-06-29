@@ -53,7 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottom_sheet);
+        mBottomSheetLayout = (BottomSheetLayout) findViewById(R.id.bottomsheet);
 
         mBottomSheet = LayoutInflater.from(this)
                 .inflate(R.layout.view_bottom_sheet, mBottomSheetLayout, false);
