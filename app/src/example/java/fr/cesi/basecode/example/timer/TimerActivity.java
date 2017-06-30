@@ -27,7 +27,7 @@ public class TimerActivity extends AbstractPopableActivity
     FrameLayout _main_content;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void on   Create(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
