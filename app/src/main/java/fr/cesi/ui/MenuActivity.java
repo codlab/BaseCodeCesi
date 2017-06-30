@@ -40,7 +40,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
 
-        finish();
     }
 };
 

@@ -110,42 +110,36 @@ public class QuestionFragment extends Fragment implements IPopableFragment {
     }
 
     private void checkAnswer(String given_answer) {
+        final boolean was_correct = question.reponseQuestion.equals(given_answer);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setCancelable(false);
 
-        if(question.reponseQuestion.equals(given_answer)) {
+        if(was_correct) {
             // text si gagné
             builder.setTitle(getString(R.string.result_title1));
             builder.setMessage(getString(R.string.result_success));
-
-
-            DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    //ICI > METTRE DANS LE CALLBACK DE LA POPUP
-                    ((QuestionActivity) getActivity()).showNextQuestion();
-                }
-            };
-
-            builder.setPositiveButton("Confirm",
-                    on_click);
-
         } else {
             // texte si perdu
             builder.setTitle(getString(R.string.result_title2));
             builder.setMessage(getString(R.string.result_failed));
+        }
 
-            DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+        DialogInterface.OnClickListener on_click =  new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(was_correct) {
                     //ICI > METTRE DANS LE CALLBACK DE LA POPUP
                     ((QuestionActivity) getActivity()).showNextQuestion();
+                } else {
+                    //nothing to do, wrong answer... stay on the fragment
                 }
-            };
+            }
+        };
 
-            builder.setNegativeButton(android.R.string.cancel, on_click);
-        }
+        builder.setNegativeButton(android.R.string.cancel, on_click);
+        builder.setPositiveButton("Confirm",
+                on_click);
 
         builder.show();
 
