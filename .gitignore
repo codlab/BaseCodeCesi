@@ -11,3 +11,5 @@
 
 
 .idea
+app/src/debug/res/values/google_maps_api.xml
+*.class
