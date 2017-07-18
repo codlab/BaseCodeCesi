@@ -7,7 +7,7 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import fr.cesi.example.database.DatabaseTempo;
 
-@Table(name = "TempoModel", database = DatabaseTempo.class)
+@Table(name = "Bar", database = DatabaseTempo.class)
 public class TempoModel extends BaseModel {
 
     @PrimaryKey(autoincrement = true)
@@ -15,13 +15,22 @@ public class TempoModel extends BaseModel {
     public long _id;
 
     @Column
-    public int price_min;
+    public String _name_bar;
 
     @Column
-    public int _duration_pause;
+    public double _latitude;
+    @Column
+
+    public double _longitude;
+    @Column
+
+    public int _price_min;
 
     @Column
-    public int _number_repetition;
+    public int _price_max;
+
+
+
 
 
     public TempoModel() {

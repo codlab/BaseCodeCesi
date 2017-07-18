@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">BaseCode</string>
+    <string name="app_name">UBar Bordeaux</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="hello_blank_fragment" />
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_splash_screen">UBar</string>
+    <string name="choice_timer_choose_start" />
+    <string name="choice_timer_choose_repetition" />
+    <string name="choice_timer_choose_pause" />
+    <string name="choice_timer_choose_duration" />
 </resources>
